@@ -13,6 +13,11 @@
 .w-800 {
   width: 25rem;
 }
-
-
-
+.profilepic-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
