@@ -16,7 +16,7 @@
 }
 
 .text-section ul {
-  list-style-type: none;
+  list-style-type: disc;
   padding: 0;
   margin-bottom: 15px;
 }
@@ -25,6 +25,23 @@
   margin-bottom: 10px;
 }
 
-.text-section p:last-child {
-  margin-bottom: 0;
+.interests {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.react-interest,
+.redis-interest,
+.elixir-interest,
+.algorithms-interest {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+/* Unique style for "Namaste!" */
+.namaste {
+  font-size: 1.2rem;
+  color: #ff9933; /* Orange color */
+  font-family: "Poppins", sans-serif; /* Indian-inspired font */
 }

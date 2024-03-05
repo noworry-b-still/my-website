@@ -4,7 +4,7 @@ function Navbar() {
     <div>
       <nav className="navbar">
         <ul className="nav-links">
-          <div className="menu">
+          <div className="menu list_style_none">
             <li>
               <a href="/">Home</a>
             </li>
@@ -17,7 +17,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/">Blog</a>
+              <a href="/">Certificates</a>
             </li>
             <li>
               <a href="/">Contact</a>

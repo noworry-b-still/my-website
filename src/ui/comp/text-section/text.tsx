@@ -13,17 +13,25 @@ function Text() {
         </li>
       </ul>
       <p>
-        Namaste! As a Redis Certified Developer, I bring a passion for building
-        scalable, performant systems to every project. From mastering Redis and
-        Elixir to architecting elegant solutions, my expertise spans the
-        spectrum of full-stack development.
+        <span className="namaste">Namaste!!</span> As a Redis Certified
+        Developer, I bring a passion for building scalable, performant systems
+        to every project. From mastering Redis and Elixir to architecting
+        elegant solutions, my expertise spans the spectrum of full-stack
+        development.
       </p>
+
       <p>
         Are you ready to elevate your team with a proven innovator who thrives
         on pushing boundaries and delivering excellence? Let's connect and
         explore the possibilities together.
       </p>
-      <p>Current interests: React, Redis, Elixir, Algorithms</p>
+      <p>Current Interests :</p>
+      <div className="interests">
+        <p className="react-interest">React</p>
+        <p className="redis-interest">Redis</p>
+        <p className="elixir-interest">Elixir</p>
+        <p className="algorithms-interest">Algorithms</p>
+      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@
 }
 
 :root {
+  /* Existing colors */
   --primary-color: #4caf50; /* Light Green */
   --background-color: #ffffff; /* White */
   --text-color: #333333; /* Dark Gray */
@@ -13,13 +14,26 @@
   --accent-color: #ff5722; /* Deep Orange */
   --error-color: #f44336; /* Red */
   --success-color: #4caf50; /* Green */
+
+  /* New colors for current interests */
+  --react-color: #00bcd4; /* Light blue */
+  --react-background-color: #e3f2fd; /* Light blue background */
+
+  --redis-color: #d32f2f; /* Light red */
+  --redis-background-color: #ffcdd2; /* Light red background */
+
+  --elixir-color: #673ab7; /* Light purple */
+  --elixir-background-color: #e1bee7; /* Light purple background */
+
+  --algorithms-color: #607d8b; /* Light gray */
+  --algorithms-background-color: #eeeeee; /* Light gray background */
 }
 
 a {
   text-decoration: none;
 }
 
-li {
+.list_style_none {
   list-style: none;
 }
 
@@ -35,4 +49,25 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Example usage in CSS */
+.react-interest {
+  color: var(--react-color);
+  background-color: var(--react-background-color);
+}
+
+.redis-interest {
+  color: var(--redis-color);
+  background-color: var(--redis-background-color);
+}
+
+.elixir-interest {
+  color: var(--elixir-color);
+  background-color: var(--elixir-background-color);
+}
+
+.algorithms-interest {
+  color: var(--algorithms-color);
+  background-color: var(--algorithms-background-color);
 }
