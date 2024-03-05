@@ -3,10 +3,8 @@ import naruto from "../../../naruto.png";
 
 function Profile() {
   return (
-    <div>
-      <div className="profile_container">
-        <img src={naruto} alt="" className="profile" />
-      </div>
+    <div className="image-center">
+      <img src={naruto} alt="" className="profile center " />
       <p className="center profile_name">Naruto Uzumaki</p>
     </div>
   );

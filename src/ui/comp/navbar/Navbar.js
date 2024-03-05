@@ -12,7 +12,9 @@ function Navbar() {
               <a href="/">Projects</a>
             </li>
             <li>
-              <a href="/">Resume</a>
+              <a href="https://storage.googleapis.com/simplify-resumes/4f864ee5-59f6-4faa-b0a2-469acb930e20/1708991553.pdf">
+                Resume
+              </a>
             </li>
             <li>
               <a href="/">Blog</a>

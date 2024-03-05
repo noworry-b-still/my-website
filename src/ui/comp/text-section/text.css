@@ -1,0 +1,30 @@
+.text-section {
+  max-width: 800px;
+  margin: auto; /* Center horizontally */
+  padding: 20px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  border-radius: 10px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.text-section p {
+  margin-bottom: 15px;
+}
+
+.text-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.text-section ul li {
+  margin-bottom: 10px;
+}
+
+.text-section p:last-child {
+  margin-bottom: 0;
+}
