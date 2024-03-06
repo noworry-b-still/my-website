@@ -28,6 +28,7 @@ const Contact = () => {
             LinkedIn:{" "}
             <a
               href="https://www.linkedin.com/in/dinesh-pandikona/"
+              rel="noopener noreferrer"
               target="_blank"
             >
               dinesh-pandikona
@@ -58,10 +59,3 @@ const Contact = () => {
 };
 
 export default Contact;
-{
-  /* <img
-        className="contact-image"
-        src={contact_image}
-        alt="Bharat's temple"
-      /> */
-}
