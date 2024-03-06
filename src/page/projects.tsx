@@ -4,7 +4,7 @@ import "./projects.css";
 
 function Projects() {
   return (
-    <div className="projects">
+    <div className="projects-container">
       {projectsData.map((project, index) => (
         <ProjectCard
           key={index}

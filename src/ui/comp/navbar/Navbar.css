@@ -1,3 +1,5 @@
+/* Navbar.css */
+
 .navbar {
   padding: 20px;
   background-color: var(--background-color);
@@ -9,10 +11,6 @@
   color: var(--text-color);
 }
 
-.logo {
-  font-size: 32px;
-}
-
 .menu {
   display: flex;
   gap: 1em;
@@ -20,11 +18,28 @@
   justify-content: center;
 }
 
-.menu li:hover {
+.menu li:hover,
+.active {
+  background-color: var(--border-color);
+  border-radius: 5px;
+  transition: 0.3s ease;
+  padding: 5px 14px;
+}
+
+.menu li {
+  padding: 5px 14px;
+  background-color: transparent;
+}
+.active {
+  font-weight: bold;
+  color: var(--primaryColor); /* Use primary color for text */
+  padding: 5px 14px; /* Ensure padding matches other list items */
   background-color: var(--border-color);
   border-radius: 5px;
   transition: 0.3s ease;
 }
-.menu li {
-  padding: 5px 14px;
+
+.menu li.active {
+  color: var(--primaryColor); /* Use primary color for text */
+  background-color: var(--border-color);
 }
