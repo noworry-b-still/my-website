@@ -19,13 +19,14 @@ function Text() {
         elegant solutions, my expertise spans the spectrum of full-stack
         development.
       </p>
-
       <p>
         Are you ready to elevate your team with a proven innovator who thrives
         on pushing boundaries and delivering excellence? Let's connect and
         explore the possibilities together.
       </p>
-      <p>Current Interests :</p>
+      <p style={{ textDecoration: "underline", display: "inline" }}>
+        Current Interests
+      </p>
       <div className="interests">
         <p className="react-interest">React</p>
         <p className="redis-interest">Redis</p>
