@@ -27,6 +27,8 @@
 
   --algorithms-color: #607d8b; /* Light gray */
   --algorithms-background-color: #eeeeee; /* Light gray background */
+
+  --activeLinkBackground: #007bff;
 }
 
 a {
@@ -44,7 +46,6 @@ a {
 .center {
   margin: 0 auto;
 }
-
 
 /* Example usage in CSS */
 .react-interest {
