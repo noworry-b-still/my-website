@@ -16,12 +16,6 @@ const Contact = () => {
         <p>Get in touch:</p>
         <ul>
           <li>
-            <span role="img" aria-label="phone">
-              📞
-            </span>{" "}
-            Mobile: +1 (857) 397-3775
-          </li>
-          <li>
             <span role="img" aria-label="email">
               ✉️
             </span>{" "}
