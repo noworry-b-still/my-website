@@ -1,0 +1,13 @@
+.certificates-container {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* Gap between grid items */
+  justify-content: center; /* Center grid items horizontally */
+}

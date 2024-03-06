@@ -1,27 +1,41 @@
 import React from "react";
-import { Certificate } from "../../types"; // Assuming you have a type defined for certificate
+import { Certificate } from "../../types";
 import "./certificate.css";
 
 interface CertificateCardProps {
   certificate: Certificate;
 }
 
-const Certificate: React.FC<CertificateCardProps> = ({ certificate }) => {
+const CertificateCard: React.FC<CertificateCardProps> = ({ certificate }) => {
   return (
-    <div className="certificate-card">
+    <div className="certificate_card">
       <img
-        className="certificate-image"
+        className="certificate_image"
         src={certificate.imageUrl}
         alt={certificate.name}
       />
-      <div className="certificate-details">
-        <h2>{certificate.name}</h2>
-        <p>Certified by: {certificate.certifiedBy}</p>
-        <p>{certificate.description}</p>
+      <div className="certificate_details">
+        <div>
+          <h2>{certificate.name}</h2>
+          <p>Certified by: {certificate.certifiedBy}</p>
+        </div>
+
+        <div>
+          <p>{"#Tags"}</p>
+          <div className="tag-container">
+            {certificate.tags.map((tag, index) => (
+              <div key={index} className="tag">
+                {tag}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <a
           href={certificate.certificateUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className="certificate_cta"
         >
           View Certificate
         </a>
@@ -30,4 +44,4 @@ const Certificate: React.FC<CertificateCardProps> = ({ certificate }) => {
   );
 };
 
-export default Certificate;
+export default CertificateCard;

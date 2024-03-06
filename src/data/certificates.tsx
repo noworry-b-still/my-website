@@ -11,7 +11,7 @@ const certificates = [
     certificateUrl:
       "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
     description: "Description for Certificate 1",
-    tags: ["Certifications"],
+    tags: ["Certification", "Redis", "High Performance", "Backend"],
   },
   {
     name: "Graph Developer - Associate",
@@ -20,7 +20,7 @@ const certificates = [
     certificateUrl:
       "https://www.apollographql.com/tutorials/certifications/e31484fc-ed45-4b61-a891-58b5f317d2c5",
     description: "Description for Certificate 1",
-    tags: ["Certifications"],
+    tags: ["Certification", "GraphQL", "API layer", "Apollo"],
   },
   {
     name: "Redis For JavaScript Developers",
@@ -29,7 +29,7 @@ const certificates = [
     certificateUrl:
       "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
     description: "Description for Certificate 2",
-    tags: ["Certificate"],
+    tags: ["Certificate", "Redis", "User Interface", "JavaScript"],
   },
   {
     name: "Redis Streams",
@@ -38,7 +38,7 @@ const certificates = [
     certificateUrl:
       "https://university.redis.com/certificates/ef5a504413604fdba1d7069d297d07fe",
     description: "Description for Certificate 2",
-    tags: ["Certificate"],
+    tags: ["Certificate", "Streams", "Real-time processing", "Pub/Sub"],
   },
   {
     name: "Redis Datastructures",
@@ -47,7 +47,12 @@ const certificates = [
     certificateUrl:
       "https://university.redis.com/certificates/c6354adb56434533a8dc7e04e382e6e9",
     description: "Description for Certificate 2",
-    tags: ["Certificate"],
+    tags: [
+      "Certificate",
+      "Redis",
+      "Storage Analysis",
+      "Time Complexity Analysis",
+    ],
   },
 ];
 
