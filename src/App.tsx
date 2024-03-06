@@ -4,6 +4,7 @@ import Projects from "./page/projects";
 import Navbar from "./ui/comp/navbar/Navbar";
 import Certificates from "./page/certificates";
 import Contact from "./page/contact";
+import Banner from "./ui/comp/banner/Banner";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Banner />
     </Router>
   );
 }

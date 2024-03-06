@@ -10,7 +10,6 @@ function Home() {
     <div className="container">
       <Profile />
       <Text />
-      <Banner />
     </div>
   );
 }
