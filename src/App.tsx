@@ -5,7 +5,7 @@ import Navbar from "./ui/comp/navbar/Navbar";
 import Certificates from "./page/certificates";
 import Contact from "./page/contact";
 import Banner from "./ui/comp/banner/Banner";
-
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Banner />
+      <Analytics />
     </Router>
   );
 }
