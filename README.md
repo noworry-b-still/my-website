@@ -1,6 +1,6 @@
 ##Dinesh Pandikona
 
-A simple website built using only React, Typescript, CSS.
+A simple website built using  React, Typescript, CSS.
 
 
 
@@ -16,4 +16,4 @@ Development is still in progress
 3. Git
 
 
-Feel free to tailor for yourselves.
+Feel free to tailor if needed.
