@@ -7,10 +7,12 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 2rem;
+  transition: transform 1s ease, box-shadow 0.5s ease; /* Added transition for box-shadow */
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased box-shadow on hover */
 }
 
 .project-card-technologies {
