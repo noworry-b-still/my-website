@@ -27,7 +27,7 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="https://storage.googleapis.com/simplify-resumes/4f864ee5-59f6-4faa-b0a2-469acb930e20/1708991553.pdf"
+                to="https://storage.googleapis.com/simplify-resumes/4f864ee5-59f6-4faa-b0a2-469acb930e20/1710009352.pdf"
                 target="_blank"
               >
                 Resume
