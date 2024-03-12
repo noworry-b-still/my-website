@@ -1,7 +1,7 @@
 import apollo from "../images/apollo.png";
 import redis_js from "../images/redis-js.png";
 import redis_streams from "../images/redis-streams.png";
-import redis_ds from "../images/redis-ds.png";
+import redis_ds from "../images/redis-certification.png";
 
 const certificates = [
   {
@@ -9,7 +9,7 @@ const certificates = [
     certifiedBy: "Redis",
     imageUrl: redis_ds,
     certificateUrl:
-      "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
+      "https://www.credential.net/8781edb5-6886-43ec-80a5-2be1d490e62d",
     description: "Description for Certificate 1",
     tags: ["Certification", "Redis", "High Performance", "Backend"],
   },
