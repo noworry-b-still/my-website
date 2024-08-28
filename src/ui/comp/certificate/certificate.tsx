@@ -9,11 +9,6 @@ interface CertificateCardProps {
 const CertificateCard: React.FC<CertificateCardProps> = ({ certificate }) => {
   return (
     <div className="certificate_card">
-      <img
-        className="certificate_image"
-        src={certificate.imageUrl}
-        alt={certificate.name}
-      />
       <div className="certificate_details">
         <div>
           <h2>{certificate.name}</h2>

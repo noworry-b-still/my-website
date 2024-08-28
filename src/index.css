@@ -51,9 +51,12 @@
 
 body {
   /* Background gradients */
-  background-image: radial-gradient(at 20% 20%, #ff9933 0%, transparent 60%),
-    /* Saffron */ radial-gradient(at 50% 50%, #ffffff 0%, transparent 60%),
-    /* White */ radial-gradient(at 80% 80%, #138808 0%, transparent 60%); /* Green */
+  background-image: radial-gradient(
+      at 9% 24%,
+      hsl(162, 77%, 40%) 0%,
+      transparent 59%
+    ),
+    radial-gradient(at 80% 79%, hsl(218.38, 49%, 56%) 0%, transparent 55%);
 
   /* Initial background position */
   background-position: 0% 0%, 100% 100%;

@@ -1,7 +1,7 @@
 import "./text.css";
 function Text() {
   return (
-    <div className="text-section">
+    <div className="text-section main-content">
       <ul>
         <li>
           I build innovative and useful products on the web with great user

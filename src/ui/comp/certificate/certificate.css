@@ -1,28 +1,46 @@
-.certificate_image {
-  width: 500px;
-  height: 500px;
-  margin-bottom: 20px;
-}
-.certificate_card {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.certificate_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Space between the cards */
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  width: 100%;
-  height: 100%;
+  background-image: radial-gradient(
+      at 9% 24%,
+      hsl(162, 77%, 40%) 0%,
+      transparent 59%
+    ),
+    radial-gradient(at 80% 79%, hsl(218.38, 49%, 56%) 0%, transparent 55%);
+  background-color: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(10px); /* Apply the blur effect to the background */
+  border-radius: 10px; /* Optional: rounded corners */
 }
 
-.certificate_details {
-  width: 50%;
-  height: 80%;
+.certificate_card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* For rounded corners */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slightly opaque background for the card */
+  backdrop-filter: blur(8px); /* Glassmorphism effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.certificate_details {
+  width: 100%;
+  height: auto; /* Adjust height automatically based on content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -37,6 +55,7 @@
 .certificate_details a {
   display: inline-block;
   padding: 8px 16px;
+  margin-top: 8px;
   background-color: #007bff;
   color: #fff;
   text-decoration: none;
@@ -50,7 +69,7 @@
 
 .tag-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 5px;
   margin-top: 10px;
 }
