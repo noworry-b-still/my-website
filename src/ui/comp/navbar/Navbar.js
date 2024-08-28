@@ -33,7 +33,7 @@ function Navbar() {
                 Resume
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to="/certificates"
                 className={
@@ -41,6 +41,14 @@ function Navbar() {
                 }
               >
                 Certificates
+              </NavLink>
+            </li> */}
+            <li>
+              <NavLink
+                to="/blog"
+                className={location.pathname === "/blog" ? "active" : ""}
+              >
+                Blog
               </NavLink>
             </li>
             <li>
