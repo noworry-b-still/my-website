@@ -1,13 +1,14 @@
 import apollo from "../images/apollo.png";
 import redis_js from "../images/redis-js.png";
 import redis_streams from "../images/redis-streams.png";
-import redis_ds from "../images/redis-certification.png";
+import redis_developer from "../images/redis-certification.png";
+import redis_ds from "../images/redis-ds.png";
 
 const certificates = [
   {
     name: "Redis Developer - Professional",
     certifiedBy: "Redis",
-    imageUrl: redis_ds,
+    imageUrl: redis_developer,
     certificateUrl:
       "https://www.credential.net/8781edb5-6886-43ec-80a5-2be1d490e62d",
     description: "Description for Certificate 1",

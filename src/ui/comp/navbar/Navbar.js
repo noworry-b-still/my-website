@@ -27,13 +27,13 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="https://storage.googleapis.com/simplify-resumes/4f864ee5-59f6-4faa-b0a2-469acb930e20/1710009352.pdf"
+                to="https://drive.google.com/file/d/17udxqtkXIxDTtgIb2n9_hINk04DAFlDF/view?usp=sharing"
                 target="_blank"
               >
                 Resume
               </NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink
                 to="/certificates"
                 className={
@@ -42,7 +42,7 @@ function Navbar() {
               >
                 Certificates
               </NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink
                 to="/blog"
