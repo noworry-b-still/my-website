@@ -30,6 +30,58 @@
 
   --activeLinkBackground: #007bff;
 }
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 25% 35%;
+  }
+
+  50% {
+    background-position: 50% 65%;
+  }
+  75% {
+    background-position: 75% 85%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+body {
+  /* Background gradients */
+  background-image: radial-gradient(at 20% 20%, #ff9933 0%, transparent 60%),
+    /* Saffron */ radial-gradient(at 50% 50%, #ffffff 0%, transparent 60%),
+    /* White */ radial-gradient(at 80% 80%, #138808 0%, transparent 60%); /* Green */
+
+  /* Initial background position */
+  background-position: 0% 0%, 100% 100%;
+
+  /* Animation to move the background */
+  background-size: 200% 200%;
+  animation: moveBackground 58s ease-in-out infinite;
+
+  /* Glassmorphism effect */
+  background-color: rgba(255, 255, 255, 0.1);
+
+  /* Fallback color */
+
+  /* Ensure the background covers the entire viewport */
+  background-attachment: fixed;
+
+  /* Ensure text is readable */
+  color: #333; /* Dark text for contrast */
+}
+
+/* Apply glassmorphism effect to the main content area if needed */
+.main-content {
+  backdrop-filter: blur(10px); /* Adjust blur amount as needed */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 10px; /* Optional: for rounded corners */
+  padding: 20px; /* Adjust padding as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for subtle shadow */
+}
 
 a {
   text-decoration: none;
@@ -51,6 +103,15 @@ a {
 .react-interest {
   color: var(--react-color);
   background-color: var(--react-background-color);
+}
+.phoenix-interest {
+  color: #e65100; /* Dark Orange for text */
+  background-color: #fff3e0; /* Light Orange for background */
+}
+
+.go-interest {
+  color: #00add8; /* Go Blue for text */
+  background-color: #e0f7fa; /* Light Cyan for background */
 }
 
 .redis-interest {

@@ -1,8 +1,10 @@
 .navbar {
   padding: 20px;
-  background-color: var(--background-color);
+
   color: var(--text-color);
   font-family: Arial, sans-serif;
+  backdrop-filter: blur(10px); /* Apply the blur effect to the navbar */
+  border-radius: 10px; /* Optional: for rounded corners */
 }
 
 .nav-links a {
@@ -10,33 +12,20 @@
   text-decoration: none; /* Remove default underline */
   padding: 5px 14px; /* Apply padding directly to the anchor */
   border-radius: 5px; /* Ensure the background color is rounded */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   position: relative; /* Needed for the underline effect */
 }
 
-.menu {
-  display: flex;
-  gap: 1em;
-  font-size: 18px;
-  justify-content: center;
-}
-
-.menu li {
-  background-color: transparent; /* No background on the li */
-}
-
-.menu a:not(.active):hover {
-  background-color: var(--border-color);
-  color: var(--primaryColor); /* Use primary color for text */
-}
-
+/* Ensure the underline is always visible for active links */
 .menu a.active {
   font-weight: bold;
   background-color: transparent; /* Ensure no background color for active state */
+  text-decoration: underline; /* Static underline for active links */
+  text-decoration-color: grey; /* Underline color */
+  text-underline-offset: 10px; /* Adjust the gap between text and underline */
 }
 
-/* Underline effect */
-.menu a.active::after {
+/* Underline effect on hover for non-active links */
+.menu a:not(.active)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -49,6 +38,20 @@
   transition: transform 0.3s ease; /* Smooth transition */
 }
 
-.menu a.active:hover::after {
+/* Expand the underline on hover for non-active links */
+.menu a:not(.active):hover::after {
   transform: scaleX(1); /* Expand the underline on hover */
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+  justify-content: center;
+}
+
+.menu li {
+  background-color: transparent; /* No background on the li */
+  padding: 5px 14px; /* Apply padding directly to the li */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }

@@ -16,7 +16,6 @@ function App() {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Banner />
       <Analytics />
     </Router>
   );

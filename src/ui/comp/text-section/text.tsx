@@ -24,13 +24,13 @@ function Text() {
         on pushing boundaries and delivering excellence? Let's connect and
         explore the possibilities together.
       </p>
-      <p style={{ textDecoration: "underline", display: "inline" }}>
+      {/* <p style={{ textDecoration: "underline", display: "inline" }}>
         Current Interests
-      </p>
+      </p> */}
       <div className="interests">
-        <p className="react-interest">React</p>
-        <p className="redis-interest">Redis</p>
+        <p className="go-interest">Go</p>
         <p className="elixir-interest">Elixir</p>
+        <p className="phoenix-interest">Phoenix</p>
         <p className="algorithms-interest">Algorithms</p>
       </div>
     </div>
