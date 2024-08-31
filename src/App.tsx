@@ -4,7 +4,7 @@ import Projects from "./page/projects";
 import Navbar from "./ui/comp/navbar/Navbar";
 import Certificates from "./page/certificates";
 import Contact from "./page/contact";
-import Banner from "./ui/comp/banner/Banner";
+import Blog from "./page/blog";
 import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/certificates" element={<Certificates />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Analytics />

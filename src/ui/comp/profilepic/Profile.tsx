@@ -1,11 +1,11 @@
 import "./Profile.css";
-import profile_pic from "../../../images/profile-pic.png";
 
 function Profile() {
   return (
-    <div className="profilepic-center">
-      <img src={profile_pic} alt="" className="profile center" />
-      <p className="center profile_name">Dinesh Pandikona</p>
+    <div className="landing-container">
+      <h1 id="my_name" data-text="Dinesh Pandikona">
+        Dinesh Pandikona
+      </h1>
     </div>
   );
 }

@@ -30,7 +30,7 @@
 
   --activeLinkBackground: #007bff;
 }
-@keyframes moveBackground {
+/* @keyframes moveBackground {
   0% {
     background-position: 0% 0%;
   }
@@ -47,16 +47,18 @@
   100% {
     background-position: 100% 100%;
   }
-}
+} */
 
 body {
   /* Background gradients */
   background-image: radial-gradient(
-      at 9% 24%,
-      hsl(162, 77%, 40%) 0%,
-      transparent 59%
+      at 0% 27%,
+      hsl(240.38, 117%, 79%) 0%,
+      transparent 25%
     ),
-    radial-gradient(at 80% 79%, hsl(218.38, 49%, 56%) 0%, transparent 55%);
+    radial-gradient(at 67% 78%, hsl(349, 100%, 50%) 0%, transparent 25%),
+    radial-gradient(at 39% 29%, hsl(218.38, 49%, 56%) 0%, transparent 25%),
+    radial-gradient(at 98% 79%, hsl(86, 53%, 48%) 0%, transparent 25%);
 
   /* Initial background position */
   background-position: 0% 0%, 100% 100%;

@@ -1,37 +1,49 @@
 import "./text.css";
+
 function Text() {
   return (
     <div className="text-section main-content">
-      <ul>
+      <div className="header">
+        <h1>Elixir Software Engineer Co-op @ Bose Professional</h1>
+      </div>
+      <ul className="cool-interests">
         <li>
-          I build innovative and useful products on the web with great user
-          experience.
+          Building robust backend systems with a passion for distributed
+          architecture.
         </li>
         <li>
-          I'm curious about how things work and often try to learn by breaking
-          them apart.
+          Enthusiast of <span className="highlight">Elixir</span>,{" "}
+          <span className="highlight">functional programming</span>, and focused
+          on achieving clear, impactful goals.
         </li>
       </ul>
-      <p>
-        <span className="namaste">Namaste!!</span> As a Redis Certified
-        Developer, I bring a passion for building scalable, performant systems
-        to every project. From mastering Redis and Elixir to architecting
-        elegant solutions, my expertise spans the spectrum of full-stack
-        development.
-      </p>
-      <p>
-        Are you ready to elevate your team with a proven innovator who thrives
-        on pushing boundaries and delivering excellence? Let's connect and
-        explore the possibilities together.
-      </p>
-      {/* <p style={{ textDecoration: "underline", display: "inline" }}>
-        Current Interests
-      </p> */}
       <div className="interests">
-        <p className="go-interest">Go</p>
-        <p className="elixir-interest">Elixir</p>
-        <p className="phoenix-interest">Phoenix</p>
-        <p className="algorithms-interest">Algorithms</p>
+        <div className="interest-item">
+          <p className="go-interest">
+            {/* <img
+              src="https://skillicons.dev/icons?i=go"
+              alt="Go logo"
+              className="interest-icon"
+            /> */}
+            Go
+          </p>
+        </div>
+        <div className="interest-item">
+          <p className="elixir-interest">
+            {/* <img
+              src="https://skillicons.dev/icons?i=elixir"
+              alt="Elixir logo"
+              className="interest-icon"
+            /> */}
+            Elixir
+          </p>
+        </div>
+        <div className="interest-item">
+          <p className="phoenix-interest">Phoenix</p>
+        </div>
+        <div className="interest-item">
+          <p className="algorithms-interest">Algorithms</p>
+        </div>
       </div>
     </div>
   );

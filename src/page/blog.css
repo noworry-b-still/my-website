@@ -1,0 +1,25 @@
+.blog-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.blog-section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.blog-content {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.blog-content p {
+  margin: 10px 0;
+}
+
+.blog-content p:first-of-type {
+  font-size: 1.5em;
+  color: #007acc;
+}
