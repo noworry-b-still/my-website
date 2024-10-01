@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="container">
       <Profile />
-      <Text />
+      {/* <Text /> */}
     </div>
   );
 }

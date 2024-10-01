@@ -1,88 +1,53 @@
-/* Container for the landing page */
+/* Terminal styling */
+.terminal {
+  background-color: #1e1e1e; /* Dark background like a terminal */
+  color: #00ff9d; /* Neon green text */
+  /* Monospace font for a coding feel */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+  white-space: pre-wrap; /* Ensure newlines and text wrapping works */
+  word-wrap: break-word;
+  font-size: 1.2rem;
+  text-align: left; /* Left align the text like a terminal */
+}
+
+/* Blinking cursor */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: #00ff9d;
+  margin-left: 5px;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.cursor {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Container styling */
 .landing-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh - 71px;
-  text-align: center;
-}
-
-/* Styling for the name */
-#my_name {
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  color: #f6d8d5;
-  font-size: 150px;
-  margin: 0;
-  opacity: 0.8;
-  margin-top: 3rem;
-}
-
-#my_name:hover {
-  opacity: 0.9;
-  text-shadow: 0px -5px #ec2225, 0px 5px #00c2cb, -5px 0px #ec2225,
-    5px 0px #00c2cb;
-}
-
-#my_name::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #e0ffff;
-  z-index: -1;
-}
-
-#my_name:hover::before {
-  animation: animate 12ms ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes animate {
-  0%,
-  100% {
-    top: -7px;
-    left: 0;
-    opacity: 1;
-  }
-  20% {
-    top: 0;
-    left: -10px;
-    opacity: 0.7;
-  }
-  40% {
-    top: 7px;
-    left: 0;
-    opacity: 0.2;
-  }
-  60% {
-    top: 0;
-    left: 10px;
-    opacity: 0.3;
-  }
-  80% {
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-  }
-}
-
-/* Glassmorphism card styling */
-.glass-card {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  height: calc(100vh - 71px);
+  color: #00ff9d;
   padding: 20px;
-  margin-top: 2rem;
-  width: 60%;
-  max-width: 500px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
 }
 
-.glass-card p {
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin: 0;
+/* Ensure no overflow */
+.terminal pre {
+  overflow-wrap: break-word; /* Prevent long text from overflowing */
+  word-break: break-word;
+  white-space: pre-wrap;
+  font-family: monospace;
 }
