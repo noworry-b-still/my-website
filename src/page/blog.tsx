@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./blog.css";
 
 // Sample blog post data (you could fetch this from a file or database in a real project)
 const blogPosts = [

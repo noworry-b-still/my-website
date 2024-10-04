@@ -1,22 +1,84 @@
+/* Blog.css */
+
+/* Blog page container */
 .blog-list {
-  padding: 20px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* Light background to separate from main page */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Blog list title */
+.blog-list h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #333; /* Darker color for the title */
+}
+
+/* Blog post items */
+.blog-list ul {
+  list-style: none;
+  padding: 0;
 }
 
 .blog-post {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.blog-post:hover {
+  transform: translateY(-3px); /* Slight hover effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog post title */
 .blog-post h2 {
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 1.75rem;
+  color: #007acc; /* Accent color for the blog title */
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
+/* Link styling */
+.blog-post h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-post h2 a:hover {
+  text-decoration: underline;
+  color: #005fa3; /* Darker shade on hover */
+}
+
+/* Excerpt styling */
 .blog-post p {
-  margin: 5px 0;
+  margin: 0.75rem 0;
+  color: #555;
+  font-size: 1rem;
 }
 
+/* Date styling */
 .blog-post small {
+  display: block;
+  font-size: 0.85rem;
   color: #888;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .blog-list {
+    padding: 1rem;
+  }
+
+  .blog-post h2 {
+    font-size: 1.5rem;
+  }
 }
