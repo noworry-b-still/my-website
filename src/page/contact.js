@@ -1,15 +1,18 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importing icons
 import "./contact.css";
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New state for loading
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(""); // Reset error message
+    setIsLoading(true); // Set loading to true
 
     // Accessing environment variables
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -25,12 +28,40 @@ const Contact = () => {
       .catch((error) => {
         console.error("Error sending email:", error.text);
         setError("Failed to send message. Please try again later.");
+      })
+      .finally(() => {
+        setIsLoading(false); // Set loading to false
       });
   };
 
   return (
     <div className="contact-container">
-      <h1>Contact Me</h1>
+      <h1 style={{ textAlign: "center" }}>Connect With Me</h1>
+      <div className="contact-info">
+        <ul>
+          <li>
+            <FaGithub /> GitHub:{" "}
+            <a
+              href="https://github.com/noworry-b-still"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              noworry-b-still
+            </a>
+          </li>
+          <li>
+            <FaLinkedin /> LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/dinesh-pandikona/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              dinesh-pandikona
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr /> {/* Separator */}
       <div className="contact-form">
         {isSubmitted ? (
           <div className="success-message">
@@ -49,69 +80,19 @@ const Contact = () => {
             </label>
             <label>
               Message:
-              <textarea name="message" rows="5" required></textarea>
+              <textarea
+                name="message"
+                rows="5"
+                required
+                style={{ resize: "none", overflow: "hidden" }} // Prevent resizing
+              ></textarea>
             </label>
-            <button type="submit">Send Message</button>
+            <button type="submit" disabled={isLoading}>
+              {isLoading ? "Sending..." : "Send Message"}
+            </button>
+            {error && <p className="error-message">{error}</p>}
           </form>
         )}
-        {error && <p className="error-message">{error}</p>}
-      </div>
-      <div className="contact-info">
-        <p>You can also reach me at:</p>
-        <ul>
-          <li>
-            <span role="img" aria-label="email">
-              ✉️
-            </span>{" "}
-            Email:{" "}
-            <a href="mailto:pandikona.d@northeastern.edu">
-              pandikona.d@northeastern.edu
-            </a>
-          </li>
-          <li>
-            <span role="img" aria-label="github">
-              🐱
-            </span>{" "}
-            GitHub:{" "}
-            <a
-              href="https://github.com/dineshpandikona"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              dineshpandikona
-            </a>
-          </li>
-          <li>
-            <span role="img" aria-label="linkedin">
-              🔗
-            </span>{" "}
-            LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/in/dinesh-pandikona/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              dinesh-pandikona
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="thug-life-quote">
-        <div>
-          <p>कर्मण्येवाधिकारस्तेमाफलेषुकदाचन |</p>
-          <p>माकर्मफलहेतुर्भूर्मातेसङ्गोऽस्त्वकर्मणि ||</p>
-        </div>
-        <div>
-          <p>karmaṇyevādhikāraste mā phaleṣhu kadāchana</p>
-          <p>mā karma-phala-hetur bhūr mā te saṅgo ’stvakarmaṇi</p>
-        </div>
-        <div>
-          You have a right to perform your prescribed duties, but you are not
-          entitled to the fruits of your actions. Never consider yourself to be
-          the cause of the results of your activities, nor be attached to
-          inaction.
-        </div>
-        <p>- Lord Krishna</p>
       </div>
     </div>
   );

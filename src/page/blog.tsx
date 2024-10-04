@@ -4,18 +4,13 @@ import "./blog.css";
 // Sample blog post data (you could fetch this from a file or database in a real project)
 const blogPosts = [
   {
-    title: "My First Blog Post",
-    slug: "my-first-post",
-    date: "2024-10-01",
-    excerpt: "This is a brief summary of the first blog post.",
+    title: "How To Install Elixir Locally",
+    slug: "elixir-install-locally",
+    date: "2024-10-04",
+    author: "Dinesh Pandikona",
+    excerpt:
+      "Elixir is a dynamic, functional language designed for building scalable and maintainable applications.",
   },
-  {
-    title: "Another Interesting Post",
-    slug: "another-post",
-    date: "2024-09-25",
-    excerpt: "Here’s a quick peek at what this blog post is about.",
-  },
-  // Add more blog post objects here
 ];
 
 const Blog = () => {
@@ -31,6 +26,7 @@ const Blog = () => {
             <p>{post.excerpt}</p>
             <p>
               <small>{post.date}</small>
+              <small>By {post.author}</small>
             </p>
           </li>
         ))}

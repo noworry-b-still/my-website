@@ -56,7 +56,7 @@ function Navbar() {
                 to="/contact"
                 className={location.pathname === "/contact" ? "active" : ""}
               >
-                Contact
+                Connect
               </NavLink>
             </li>
           </div>
