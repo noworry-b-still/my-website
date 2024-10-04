@@ -1,5 +1,5 @@
 import Profile from "../ui/comp/profilepic/Profile";
-import Text from "../ui/comp/text-section/text";
+import Certificates from "./certificates";
 import "./home.css";
 
 function Home() {
@@ -7,6 +7,7 @@ function Home() {
     <div className="container">
       <Profile />
       {/* <Text /> */}
+      <Certificates />
     </div>
   );
 }

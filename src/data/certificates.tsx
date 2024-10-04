@@ -23,38 +23,38 @@ const certificates = [
     description: "Description for Certificate 1",
     tags: ["Certification", "GraphQL", "API layer", "Apollo"],
   },
-  {
-    name: "Redis For JavaScript Developers",
-    certifiedBy: "Redis",
-    imageUrl: redis_js,
-    certificateUrl:
-      "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
-    description: "Description for Certificate 2",
-    tags: ["Certificate", "Redis", "User Interface", "JavaScript"],
-  },
-  {
-    name: "Redis Streams",
-    certifiedBy: "Redis",
-    imageUrl: redis_streams,
-    certificateUrl:
-      "https://university.redis.com/certificates/ef5a504413604fdba1d7069d297d07fe",
-    description: "Description for Certificate 2",
-    tags: ["Certificate", "Streams", "Real-time processing", "Pub/Sub"],
-  },
-  {
-    name: "Redis Datastructures",
-    certifiedBy: "Redis",
-    imageUrl: redis_ds,
-    certificateUrl:
-      "https://university.redis.com/certificates/c6354adb56434533a8dc7e04e382e6e9",
-    description: "Description for Certificate 2",
-    tags: [
-      "Certificate",
-      "Redis",
-      "Storage Analysis",
-      "Time Complexity Analysis",
-    ],
-  },
+  // {
+  //   name: "Redis For JavaScript Developers",
+  //   certifiedBy: "Redis",
+  //   imageUrl: redis_js,
+  //   certificateUrl:
+  //     "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
+  //   description: "Description for Certificate 2",
+  //   tags: ["Certificate", "Redis", "User Interface", "JavaScript"],
+  // },
+  // {
+  //   name: "Redis Streams",
+  //   certifiedBy: "Redis",
+  //   imageUrl: redis_streams,
+  //   certificateUrl:
+  //     "https://university.redis.com/certificates/ef5a504413604fdba1d7069d297d07fe",
+  //   description: "Description for Certificate 2",
+  //   tags: ["Certificate", "Streams", "Real-time processing", "Pub/Sub"],
+  // },
+  // {
+  //   name: "Redis Datastructures",
+  //   certifiedBy: "Redis",
+  //   imageUrl: redis_ds,
+  //   certificateUrl:
+  //     "https://university.redis.com/certificates/c6354adb56434533a8dc7e04e382e6e9",
+  //   description: "Description for Certificate 2",
+  //   tags: [
+  //     "Certificate",
+  //     "Redis",
+  //     "Storage Analysis",
+  //     "Time Complexity Analysis",
+  //   ],
+  // },
 ];
 
 export default certificates;

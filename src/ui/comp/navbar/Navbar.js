@@ -33,7 +33,7 @@ function Navbar() {
                 Resume
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to="/certificates"
                 className={
@@ -42,7 +42,7 @@ function Navbar() {
               >
                 Certificates
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/blog"
