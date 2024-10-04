@@ -5,7 +5,9 @@ import Navbar from "./ui/comp/navbar/Navbar";
 import Certificates from "./page/certificates";
 import Contact from "./page/contact";
 import Blog from "./page/blog";
+import BlogPost from "./ui/comp/blogPost/BlogPost";
 import { Analytics } from "@vercel/analytics/react";
+
 function App() {
   return (
     <Router>
@@ -14,7 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/certificates" element={<Certificates />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />{" "}
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Analytics />
