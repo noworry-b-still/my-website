@@ -106,7 +106,7 @@ function Profile() {
   useEffect(() => {
     if (showCurrentStudy) {
       let currentStudyIndex = 0;
-      const currentStudyCommand = "> get my_current_study";
+      const currentStudyCommand = "> get my_current_studies";
       const currentStudyOutput =
         "\nMaster in Computer Science at Northeastern, Boston -- focusing on algorithms and distributed systems.\n\n";
       let currentStudyCurrentText = terminalText;
