@@ -14,8 +14,8 @@ function Profile() {
     let timer: any;
 
     // Simulate terminal typing for the first command 'who'
-    const whoCommand = "> who";
-    const whoOutput = "\nDinesh Pandikona\n\n";
+    const whoCommand = "> who_am_i";
+    const whoOutput = "\nI am Dinesh Pandikona\n\n";
     let currentText = "";
     let index = 0;
 
@@ -46,9 +46,9 @@ function Profile() {
   useEffect(() => {
     if (showIntro) {
       let introIndex = 0;
-      const introCommand = "> intro";
+      const introCommand = "> get my_intro";
       const introOutput =
-        "\nSoftware engineer, passionate about building scalable and fault-tolerant software systems.\n\n";
+        "\nI am a problem solver, passionate about building scalable and fault-tolerant software systems.\n\n";
       let introCurrentText = terminalText;
 
       const typeIntroCommand = () => {
@@ -76,9 +76,9 @@ function Profile() {
   useEffect(() => {
     if (showCurrentWork) {
       let currentWorkIndex = 0;
-      const currentWorkCommand = "> current_work";
+      const currentWorkCommand = "> get my_current_work";
       const currentWorkOutput =
-        "\n6-month internship at Bose Professional, building next-generation audio software platform.\n\n";
+        "\nDoing 6-month internship at Bose Professional, building next-generation audio software platform.\n\n";
       let currentWorkCurrentText = terminalText;
 
       const typeCurrentWorkCommand = () => {
@@ -106,9 +106,9 @@ function Profile() {
   useEffect(() => {
     if (showCurrentStudy) {
       let currentStudyIndex = 0;
-      const currentStudyCommand = "> current_study";
+      const currentStudyCommand = "> get my_current_study";
       const currentStudyOutput =
-        "\nMS in CS at Northeastern, Boston -- focusing on algorithms and distributed systems.\n\n";
+        "\nMaster in Computer Science at Northeastern, Boston -- focusing on algorithms and distributed systems.\n\n";
       let currentStudyCurrentText = terminalText;
 
       const typeCurrentStudyCommand = () => {
@@ -136,9 +136,10 @@ function Profile() {
   useEffect(() => {
     if (showHireMe) {
       let hireMeIndex = 0;
-      const hireMeCommand = "> hire_me";
+      const hireMeCommand = "> available_for_hire?";
       const hireMeOutput =
-        "\nAvailable for hire in May 2025. Let's build something amazing together!\n\n";
+        "\nYes, I am! Starting May 2025. Let's create something incredible together.\n\n";
+
       let hireMeCurrentText = terminalText;
 
       const typeHireMeCommand = () => {
@@ -166,9 +167,9 @@ function Profile() {
   useEffect(() => {
     if (showLanguagesAdmired) {
       let languagesAdmiredIndex = 0;
-      const languagesAdmiredCommand = "> languages_admired";
+      const languagesAdmiredCommand = "> get languages_comfortable_in";
       const languagesAdmiredOutput =
-        "\nPython, C, Elixir, Rust, JavaScript\n\n";
+        "\nPython, JavaScript, Elixir, Rust, C, Go\n\n";
       let languagesAdmiredCurrentText = terminalText;
 
       const typeLanguagesAdmiredCommand = () => {
