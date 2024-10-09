@@ -32,8 +32,8 @@ function Profile() {
           setTerminalText(currentText);
           setTimeout(() => {
             setShowIntro(true); // Trigger the 'intro' command
-          }, 1000);
-        }, 500); // Delay before showing the output
+          }, 500);
+        }, 200); // Delay before showing the output
       }
     };
 
@@ -64,8 +64,8 @@ function Profile() {
             setTerminalText(introCurrentText);
             setTimeout(() => {
               setShowCurrentWork(true); // Trigger the 'current_work' command
-            }, 1000);
-          }, 500);
+            }, 500);
+          }, 200);
         }
       };
 
@@ -94,8 +94,8 @@ function Profile() {
             setTerminalText(currentWorkCurrentText);
             setTimeout(() => {
               setShowCurrentStudy(true); // Trigger the 'current_study' command
-            }, 1000);
-          }, 500);
+            }, 500);
+          }, 200);
         }
       };
 
@@ -124,8 +124,8 @@ function Profile() {
             setTerminalText(currentStudyCurrentText);
             setTimeout(() => {
               setShowHireMe(true); // Trigger the 'hire_me' command
-            }, 1000);
-          }, 500);
+            }, 500);
+          }, 200);
         }
       };
 
@@ -155,8 +155,8 @@ function Profile() {
             setTerminalText(hireMeCurrentText);
             setTimeout(() => {
               setShowLanguagesAdmired(true); // Trigger the 'languages_admired' command
-            }, 1000);
-          }, 500);
+            }, 500);
+          }, 200);
         }
       };
 
@@ -184,7 +184,7 @@ function Profile() {
           setTimeout(() => {
             languagesAdmiredCurrentText += languagesAdmiredOutput;
             setTerminalText(languagesAdmiredCurrentText);
-          }, 500);
+          }, 200);
         }
       };
 
