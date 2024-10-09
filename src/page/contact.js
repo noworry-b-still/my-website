@@ -38,28 +38,24 @@ const Contact = () => {
     <div className="contact-container">
       <h1 style={{ textAlign: "center" }}>Connect With Me</h1>
       <div className="contact-info">
-        <ul>
-          <li>
-            <FaGithub /> GitHub:{" "}
-            <a
-              href="https://github.com/noworry-b-still"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              noworry-b-still
-            </a>
-          </li>
-          <li>
-            <FaLinkedin /> LinkedIn:
-            <a
-              href="https://www.linkedin.com/in/dinesh-pandikona/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              dinesh-pandikona
-            </a>
-          </li>
-        </ul>
+        <div className="social-buttons">
+          <a
+            href="https://github.com/noworry-b-still"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button github"
+          >
+            <FaGithub className="icon" /> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dinesh-pandikona/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button linkedin"
+          >
+            <FaLinkedin className="icon" /> LinkedIn
+          </a>
+        </div>
       </div>
       <hr /> {/* Separator */}
       <div className="contact-form">
