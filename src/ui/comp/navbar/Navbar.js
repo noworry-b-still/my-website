@@ -34,7 +34,6 @@ function Navbar() {
                 Resume
               </a>
             </li>
-
             {/* <li>
               <NavLink
                 to="/certificates"

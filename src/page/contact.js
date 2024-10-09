@@ -56,6 +56,7 @@ const Contact = () => {
             <FaLinkedin className="icon" /> LinkedIn
           </a>
         </div>
+
       </div>
       <hr /> {/* Separator */}
       <div className="contact-form">
