@@ -1,0 +1,49 @@
+.scroll-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 0.5s ease-in; /* Smooth fade-in effect */
+}
+
+.scroll-button {
+  border: none;
+  border-radius: 50%; /* Make it round */
+  width: 60px; /* Adjust the size */
+  height: 60px; /* Adjust the size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Smooth background transition */
+  background: linear-gradient(
+    135deg,
+    #000000,
+    #00ff00
+  ); /* Gradient background */
+  opacity: 0; /* Start with hidden opacity */
+  animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+.scroll-button.scroll-up {
+  background: linear-gradient(
+    135deg,
+    hsl(218.38, 49%, 56%),
+    hsl(86, 53%, 48%)
+  ); /* Gradient for up */
+}
+
+.scroll-button.scroll-down {
+  background: linear-gradient(
+    135deg,
+    hsl(218.38, 49%, 56%),
+    hsl(86, 53%, 48%)
+  ); /* Gradient for down */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* End with full opacity */
+  }
+}
