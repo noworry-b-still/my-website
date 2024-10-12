@@ -11,3 +11,12 @@
   gap: 20px; /* Gap between grid items */
   justify-content: center; /* Center grid items horizontally */
 }
+
+.certificates-container h1 {
+  font-size: 3rem; /* Larger font size */
+  background: linear-gradient(90deg, #800080, #ff4500, #32cd32);
+  -webkit-background-clip: text;
+  color: transparent; /* For text gradient */
+  font-family: "Poppins", sans-serif; /* A modern, clean font */
+  margin-bottom: 40px; /* Add more margin below the title */
+}
