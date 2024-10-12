@@ -7,6 +7,7 @@ import "./certificates.css";
 function Certificates() {
   return (
     <div className="certificates-container">
+      <h1>Certificates</h1>
       <div className="certificates-grid">
         {certificates.map((certificate: Certificate, index: number) => (
           <CertificateCard key={index} certificate={certificate} />

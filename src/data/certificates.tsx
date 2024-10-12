@@ -1,10 +1,22 @@
 import apollo from "../images/apollo.png";
-import redis_js from "../images/redis-js.png";
-import redis_streams from "../images/redis-streams.png";
 import redis_developer from "../images/redis-certification.png";
-import redis_ds from "../images/redis-ds.png";
+import rust from "../images/Rust.png";
 
 const certificates = [
+  {
+    name: "Learn Rust From Scratch",
+    certifiedBy: "Educative.io",
+    imageUrl: rust,
+    certificateUrl:
+      "https://www.educative.io/verify-certificate/P1vxGOto783mKogVoFm7n8W54x5Jfl",
+    description: "Description for Certificate 3",
+    tags: [
+      "Rust",
+      "Data Structures",
+      "Memory Management",
+      "Systems Programming",
+    ],
+  },
   {
     name: "Redis Developer - Professional",
     certifiedBy: "Redis",
@@ -23,15 +35,7 @@ const certificates = [
     description: "Description for Certificate 1",
     tags: ["Certification", "GraphQL", "API layer", "Apollo"],
   },
-  // {
-  //   name: "Redis For JavaScript Developers",
-  //   certifiedBy: "Redis",
-  //   imageUrl: redis_js,
-  //   certificateUrl:
-  //     "https://university.redis.com/certificates/4d3b18dadcd14cb09815dabbe3f84cc4",
-  //   description: "Description for Certificate 2",
-  //   tags: ["Certificate", "Redis", "User Interface", "JavaScript"],
-  // },
+
   // {
   //   name: "Redis Streams",
   //   certifiedBy: "Redis",
