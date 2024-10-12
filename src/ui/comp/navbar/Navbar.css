@@ -1,6 +1,5 @@
 .navbar {
   padding: 20px;
-
   color: var(--text-color);
   font-family: Arial, sans-serif;
   backdrop-filter: blur(10px); /* Apply the blur effect to the navbar */
@@ -13,6 +12,7 @@
   padding: 5px 14px; /* Apply padding directly to the anchor */
   border-radius: 5px; /* Ensure the background color is rounded */
   position: relative; /* Needed for the underline effect */
+  text-transform: uppercase; /* Make all text in anchor uppercase */
 }
 
 /* Ensure the underline is always visible for active links */
@@ -46,7 +46,7 @@
 .menu {
   display: flex;
   gap: 1em;
-  font-size: 18px;
+  font-size: 1rem;
   justify-content: center;
 }
 
@@ -54,4 +54,5 @@
   background-color: transparent; /* No background on the li */
   padding: 5px 14px; /* Apply padding directly to the li */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  text-transform: uppercase; /* Make all text in li uppercase */
 }
