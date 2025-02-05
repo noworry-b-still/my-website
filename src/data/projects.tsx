@@ -1,22 +1,8 @@
-import solar_dashboard from "../images/solar-dashboard.png";
-import image_editor from "../images/image-editor.png";
+import image_editor from "../images/pdp-image-app-thumbnail.png";
+import last_stand from "../images/the_last_stand.png"
+
 
 const projects = [
-  {
-    name: "Solar Site Dashboard",
-    description:
-      'Worked on implementing features like geospatial search, leader board for top solar locations as part of "Redis Certification" Journey.',
-    technologies: [
-      "Express",
-      "Node",
-      "Redis",
-      "Git",
-      "Data Visualization",
-      "DAO design pattern",
-    ],
-    image: solar_dashboard, // Image URL
-    link: "https://dineshpandikona-references.netlify.app/", // Project URL
-  },
   {
     name: "Image Editor - Java desktop GUI",
     description:
@@ -30,17 +16,23 @@ const projects = [
       "Command design pattern",
     ],
     image: image_editor,
-    link: "https://dineshpandikona-references.netlify.app/", // Project URL
+    link: "https://drive.google.com/file/d/1kqwfI5aHZ4-aXdKJdhU-ywNBeGPjNCrt/view?usp=drive_link", // Project URL
   },
-  // {
-  //   name: "Image Picker - Typescript Plugin",
-  //   description:
-  //     "Designed and created an innovative, reusable image picker plugin. It provides a highly responsive, customizable solution for efficiently selecting, displaying, and arranging images in a responsive layout.",
-  //   technologies: ["Typescript", "React", "CSS3", "Git", "Rollup", "lodash"],
-  //   image:
-  //     "https://dummyjson.com/image/400x200/008080/ffffff?text=Hello+Peter!&fontFamily=cookie", // Image URL
-  //   link: "https://dineshpandikona-references.netlify.app/", // Project URL
-  // },
+  {
+    name: "The Last Stand",
+    description:
+      'The Last Stand: Earth\'s final hope rests in your hands—blast through alien fleets in an adrenaline-fueled space battle for survival!',
+    technologies: [
+      "Unity",
+      "C#",
+      "Scripting",
+      "Game Development",
+      "Git",
+      "Game Design"
+    ],
+    image: last_stand,
+    link: "https://drive.google.com/file/d/1xIZKMM6NC_Engq085BFmmIYhFQAybOCQ/view", // Project URL
+  },
 ];
 
 export default projects;
