@@ -1,19 +1,21 @@
 .certificates-container {
   max-width: 85%;
-  margin: 0 auto;
-  padding: 20px;
+  /* margin: 0 auto; */
+  padding: 20px 0px;
   text-align: center;
 }
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px; /* Gap between grid items */
-  justify-content: center; /* Center grid items horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.certificates-container > h1 {
-  font-size: 3.5rem;
+
+.certificates-container>h1 {
+  font-size: 2rem;
   font-family: sans-serif;
   position: relative;
   background: white;
@@ -21,6 +23,7 @@
   margin-bottom: 1rem;
   padding: 0;
   overflow: hidden;
+
   &:before {
     content: "";
     display: block;
@@ -32,20 +35,16 @@
     width: 100%;
     height: 100%;
     mix-blend-mode: screen;
-    background-image: repeating-linear-gradient(
-        -45deg,
+    background-image: repeating-linear-gradient(-45deg,
         transparent,
         transparent 1em,
         #9e2053 1em,
-        orange 50%
-      ),
-      repeating-linear-gradient(
-        45deg,
+        orange 50%),
+      repeating-linear-gradient(45deg,
         #111626,
         #111626 1em,
         pink 1em,
-        #571b3d 50%
-      );
+        #571b3d 50%);
     background-size: 3em 3em, 2em 2em;
     animation-name: ani;
     animation-duration: 8s;
@@ -59,6 +58,7 @@
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 400% 0;
   }
