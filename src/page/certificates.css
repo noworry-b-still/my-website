@@ -1,6 +1,4 @@
 .certificates-container {
-  max-width: 85%;
-  /* margin: 0 auto; */
   padding: 20px 0px;
   text-align: center;
 }
@@ -16,15 +14,15 @@
 
 .certificates-container>h1 {
   font-size: 2rem;
-  font-family: sans-serif;
-  position: relative;
-  background: white;
-  color: black;
-  margin-bottom: 1rem;
-  padding: 0;
-  overflow: hidden;
+  font-weight: bold;
+  text-align: left;
+  color: #5a2d82;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #5a2d82;
+  padding-bottom: 5px;
 
-  &:before {
+
+  /* &:before {
     content: "";
     display: block;
     position: absolute;
@@ -51,9 +49,10 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-  }
+  } */
 }
 
+/* 
 @keyframes ani {
   from {
     background-position: 0 0;
@@ -62,4 +61,4 @@
   to {
     background-position: 400% 0;
   }
-}
+} */
