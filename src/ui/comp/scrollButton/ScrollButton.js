@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ChevronUp, ChevronDown } from "lucide-react"; // Importing icons
 import "./ScrollButton.css"; // Ensure this file contains the styles
 
 const ScrollButton = () => {
@@ -16,7 +17,7 @@ const ScrollButton = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   };
 
-  // Detect if the user has scrolled to the threshold from the bottom of the page
+  // Detect if the user has scrolled near the bottom of the page
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
@@ -47,7 +48,7 @@ const ScrollButton = () => {
           className={`scroll-button ${atBottom ? "scroll-up" : "scroll-down"}`}
           onClick={atBottom ? scrollToTop : scrollToBottom}
         >
-          {atBottom ? "▲" : "▼"}
+          {atBottom ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
         </button>
       )}
     </div>
