@@ -7,29 +7,40 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 2rem;
-  transition: transform 1s ease, box-shadow 0.5s ease; /* Added transition for box-shadow */
+  transition: transform 1s ease, box-shadow 0.5s ease;
+  /* Added transition for box-shadow */
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased box-shadow on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /* Increased box-shadow on hover */
 }
 
 .project-card-technologies {
-  list-style: none; /* Remove bullets */
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 10px; /* Gap between items */
-  padding: 10px; /* Padding for background color */
+  list-style: none;
+  /* Remove bullets */
+  display: grid;
+  /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns */
+  gap: 10px;
+  /* Gap between items */
+  padding: 10px;
+  /* Padding for background color */
 }
+
 .project-card-description {
   padding: 10px;
 }
 
 .project-card-technologies li {
-  padding: 5px; /* Adjust padding as needed */
-  text-align: center; /* Center-align text */
-  border: 1px solid var(--border-color); /* Add thin border */
+  padding: 5px;
+  /* Adjust padding as needed */
+  text-align: center;
+  /* Center-align text */
+  border: 1px solid var(--border-color);
+  /* Add thin border */
 }
 
 .project-card-image {
@@ -38,6 +49,7 @@
   border-radius: 10px;
   margin-bottom: 15px;
 }
+
 .project-card_name-description-container {
   height: 20%;
 }
@@ -59,15 +71,6 @@
   margin-bottom: 5px;
 }
 
-.project-card a {
-  display: inline-block;
-  background-color: var(--border-color);
-  color: var(--textColor);
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
 
 .project-card-cta {
   background-color: var(--accentColor);
@@ -81,16 +84,39 @@
 }
 
 .project-card-cta {
-  margin-top: 10px; /* Additional margin top for button */
+  margin-top: 10px;
+  /* Additional margin top for button */
 }
+
 .project-card_button-container {
   display: flex;
-  justify-content: center; /* Horizontally center the buttons */
-  align-items: center; /* Vertically center the buttons */
-  margin-top: 20px; /* Add margin top */
+  justify-content: center;
+  /* Horizontally center the buttons */
+  align-items: center;
+  /* Vertically center the buttons */
+  margin-top: 20px;
+  /* Add margin top */
   gap: 2rem;
 }
 
-.project-card_button-container > * {
-  margin-top: 10px; /* Add space between buttons */
+.project-card_button-container>* {
+  margin-top: 10px;
+  /* Add space between buttons */
+}
+
+
+.project-card-link {
+  display: inline-block;
+  background-color: #6A0DAD;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+.project-card-link:hover {
+  background-color: #5a0b90;
 }
