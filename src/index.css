@@ -7,29 +7,45 @@
 
 :root {
   /* Existing colors */
-  --primary-color: #4caf50; /* Light Green */
-  --background-color: #ffffff; /* White */
-  --text-color: #333333; /* Dark Gray */
-  --border-color: #e0e0e0; /* Light Gray */
-  --accent-color: #ff5722; /* Deep Orange */
-  --error-color: #f44336; /* Red */
-  --success-color: #4caf50; /* Green */
+  --primary-color: #4caf50;
+  /* Light Green */
+  --background-color: #ffffff;
+  /* White */
+  --text-color: #333333;
+  /* Dark Gray */
+  --border-color: #e0e0e0;
+  /* Light Gray */
+  --accent-color: #ff5722;
+  /* Deep Orange */
+  --error-color: #f44336;
+  /* Red */
+  --success-color: #4caf50;
+  /* Green */
 
   /* New colors for current interests */
-  --react-color: #00bcd4; /* Light blue */
-  --react-background-color: #e3f2fd; /* Light blue background */
+  --react-color: #00bcd4;
+  /* Light blue */
+  --react-background-color: #e3f2fd;
+  /* Light blue background */
 
-  --redis-color: #d32f2f; /* Light red */
-  --redis-background-color: #ffcdd2; /* Light red background */
+  --redis-color: #d32f2f;
+  /* Light red */
+  --redis-background-color: #ffcdd2;
+  /* Light red background */
 
-  --elixir-color: #673ab7; /* Light purple */
-  --elixir-background-color: #e1bee7; /* Light purple background */
+  --elixir-color: #673ab7;
+  /* Light purple */
+  --elixir-background-color: #e1bee7;
+  /* Light purple background */
 
-  --algorithms-color: #607d8b; /* Light gray */
-  --algorithms-background-color: #eeeeee; /* Light gray background */
+  --algorithms-color: #607d8b;
+  /* Light gray */
+  --algorithms-background-color: #eeeeee;
+  /* Light gray background */
 
   --activeLinkBackground: #007bff;
 }
+
 /* @keyframes moveBackground {
   0% {
     background-position: 0% 0%;
@@ -50,16 +66,13 @@
 } */
 
 body {
-  /* Background gradients */
-  background-image: radial-gradient(
-      at 18% -4%,
-      hsl(240.38, 117%, 79%) 0%,
-      transparent 7%
-    ),
-    radial-gradient(at 78% 49%, hsl(349, 74%, 50%) 0%, transparent 8%),
-    radial-gradient(at 10% -6%, hsl(218.38, 49%, 56%) 0%, transparent 8%),
-    radial-gradient(at 98% 47%, hsl(86, 53%, 48%) 0%, transparent 12%);
-
+  background-image: radial-gradient(at 18% -4%,
+      #989788 0%,
+      transparent 7%),
+    radial-gradient(at 78% 49%, #51344D 0%, transparent 8%),
+    radial-gradient(at 10% -6%, #6F5060 0%, transparent 8%),
+    radial-gradient(at 98% 47%, #A78682 0%, transparent 12%),
+    radial-gradient(at 98% 47%, #E7EBC5 0%, transparent 12%);
   /* Initial background position */
   background-position: 0% 0%, 100% 100%;
 
@@ -68,7 +81,7 @@ body {
   animation: moveBackground 30s ease-in-out infinite;
 
   /* Glassmorphism effect */
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgb(219, 214, 214); */
 
   /* Fallback color */
 
@@ -76,16 +89,24 @@ body {
   background-attachment: fixed;
 
   /* Ensure text is readable */
-  color: #333; /* Dark text for contrast */
+  color: #333;
+  /* Dark text for contrast */
+  background: linear-gradient(to bottom, #faf6ff, #ffffff);
+
 }
 
 /* Apply glassmorphism effect to the main content area if needed */
 .main-content {
-  backdrop-filter: blur(10px); /* Adjust blur amount as needed */
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-  border-radius: 10px; /* Optional: for rounded corners */
-  padding: 20px; /* Adjust padding as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for subtle shadow */
+  backdrop-filter: blur(10px);
+  /* Adjust blur amount as needed */
+  background: rgba(255, 255, 255, 0.2);
+  /* Semi-transparent background */
+  border-radius: 10px;
+  /* Optional: for rounded corners */
+  padding: 20px;
+  /* Adjust padding as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: for subtle shadow */
 }
 
 a {
@@ -109,14 +130,19 @@ a {
   color: var(--react-color);
   background-color: var(--react-background-color);
 }
+
 .phoenix-interest {
-  color: #e65100; /* Dark Orange for text */
-  background-color: #fff3e0; /* Light Orange for background */
+  color: #e65100;
+  /* Dark Orange for text */
+  background-color: #fff3e0;
+  /* Light Orange for background */
 }
 
 .go-interest {
-  color: #00add8; /* Go Blue for text */
-  background-color: #e0f7fa; /* Light Cyan for background */
+  color: #00add8;
+  /* Go Blue for text */
+  background-color: #e0f7fa;
+  /* Light Cyan for background */
 }
 
 .redis-interest {
