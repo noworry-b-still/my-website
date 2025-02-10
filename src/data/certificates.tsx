@@ -1,12 +1,12 @@
-import apollo from "../images/apollo.png";
+// import apollo from "../images/apollo.png";
 import redis_developer from "../images/redis-certification.png";
-import rust from "../images/Rust.png";
+// import rust from "../images/Rust.png";
 
 const certificates = [
   {
     name: "Learn Rust From Scratch",
     certifiedBy: "Educative.io",
-    imageUrl: rust,
+    imageUrl: "dummy",
     certificateUrl:
       "https://www.educative.io/verify-certificate/P1vxGOto783mKogVoFm7n8W54x5Jfl",
     description: "Description for Certificate 3",
@@ -29,7 +29,7 @@ const certificates = [
   {
     name: "Graph Developer - Associate",
     certifiedBy: "Apollo",
-    imageUrl: apollo,
+    imageUrl: "dummy",
     certificateUrl:
       "https://www.apollographql.com/tutorials/certifications/e31484fc-ed45-4b61-a891-58b5f317d2c5",
     description: "Description for Certificate 1",
