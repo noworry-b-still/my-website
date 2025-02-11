@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importing icons
 import "./contact.css";
+import { Handshake } from "lucide-react";
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -36,7 +37,10 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h1 style={{ textAlign: "center" }}>Connect With Me</h1>
+      <h1 className="projects-title">
+        <Handshake size={32} />Connect With Me
+      </h1>
+
       <div className="contact-info">
         <div className="social-buttons">
           <a
