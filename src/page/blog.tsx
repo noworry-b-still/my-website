@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 import { Calendar, User } from "lucide-react";
 import styled from "styled-components";
-import Elixir from "../images/elixir.jpeg";
+import Elixir from "../images/elixir.jpeg"
 
-// Styled Components
+// Color constants based on the home page
+const colors = {
+  primary: '#663399', // Deep purple from the Technical Arsenal section
+  primaryLight: '#8652AD', // Lighter purple for hover states
+  secondary: '#4A5568', // For text
+  backgroundLight: '#F8F9FA',
+  textPrimary: '#2D3748',
+  textSecondary: '#4A5568',
+  borderColor: '#E2E8F0'
+};
+
 const BlogContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -17,7 +27,7 @@ const BlogHeader = styled.header`
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  color: #1f2937;
+  color: ${colors.primary};
   margin-bottom: 1rem;
   font-weight: 700;
 
@@ -27,7 +37,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  color: #4b5563;
+  color: ${colors.textSecondary};
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -51,7 +61,7 @@ const BlogPost = styled.article`
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
+  border: 1px solid ${colors.borderColor};
 
   &:hover {
     transform: translateY(-4px);
@@ -62,7 +72,7 @@ const BlogPost = styled.article`
 const PostImage = styled.div`
   width: 100%;
   height: 200px;
-  background: #f3f4f6;
+  background: ${colors.backgroundLight};
   overflow: hidden;
 
   img {
@@ -89,21 +99,20 @@ const Categories = styled.div`
 
 const CategoryTag = styled.span`
   padding: 0.25rem 0.75rem;
-  background: #f3f4f6;
+  background: ${colors.primary};
   border-radius: 2rem;
   font-size: 0.875rem;
-  color: #2563eb;
+  color: white;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #2563eb;
-    color: white;
+    background: ${colors.primaryLight};
   }
 `;
 
 const PostTitle = styled.h2`
   font-size: 1.5rem;
-  color: #1f2937;
+  color: ${colors.textPrimary};
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.3;
@@ -114,13 +123,13 @@ const PostTitle = styled.h2`
     transition: color 0.3s ease;
 
     &:hover {
-      color: #2563eb;
+      color: ${colors.primary};
     }
   }
 `;
 
 const PostExcerpt = styled.p`
-  color: #4b5563;
+  color: ${colors.textSecondary};
   margin-bottom: 1.5rem;
   line-height: 1.6;
 `;
@@ -130,9 +139,9 @@ const PostMeta = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid ${colors.borderColor};
   font-size: 0.875rem;
-  color: #6b7280;
+  color: ${colors.textSecondary};
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -151,13 +160,13 @@ const ReadMore = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #2563eb;
+  color: ${colors.primary};
   font-weight: 500;
   text-decoration: none;
   margin-top: 1rem;
   
   &:hover {
-    color: #1d4ed8;
+    color: ${colors.primaryLight};
     text-decoration: underline;
   }
 `;
