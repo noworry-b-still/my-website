@@ -1,3 +1,4 @@
+/* General Container Styling */
 .home-container {
   display: flex;
   flex-direction: column;
@@ -5,13 +6,37 @@
   padding: 40px 20px;
 }
 
-.journey-text {
-  margin-left: 10px;
-  /* Adds spacing between the year and text */
-  display: inline-block;
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
+/* Profile Picture */
+.fixed-profile-pic {
+  position: sticky;
+  top: 20px;
+  width: 9rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background: #E7EBC5;
+  border: 2.5px solid #5a2d82;
+}
 
+/* Profile Details */
+.profile-details {
+  flex: 1;
+  text-align: left;
+}
+
+/* Intro Title */
 .journey-title {
   font-size: 2rem;
   font-weight: bold;
@@ -22,70 +47,56 @@
   padding-bottom: 5px;
 }
 
-.profile-section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 80%;
-  max-width: 900px;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.fixed-profile-pic {
-  position: sticky;
-  top: 20px;
-  width: 9rem;
-  height: 9rem;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  background: #E7EBC5;
-  /* Gradient */
-  border: 2.5px solid #5a2d82;
-}
-
-.profile-details {
-  flex: 1;
-  text-align: left;
-}
-
-.profile-details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.profile-details ul li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #333;
-}
-
-
-.scroll-button-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
-
+/* Journey Section */
 .journey-list {
   padding-left: 20px;
-  /* Adds proper indentation */
 }
 
 .journey-text {
   display: block;
-  /* Ensures each bullet point is on a new line */
   margin-bottom: 6px;
-  /* Adds spacing between each point */
 }
 
-.highlight {
-  font-weight: bold;
-  color: #5a2d82;
-  /* Purple to match theme */
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-profile-pic {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .profile-details {
+    text-align: center;
+  }
+
+  .journey-title {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}
+
+/* Further Adjustments for Mobile Screens */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .profile-section {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .journey-title {
+    font-size: 1.6rem;
+  }
+
+  .journey-text {
+    font-size: 0.9rem;
+  }
 }
