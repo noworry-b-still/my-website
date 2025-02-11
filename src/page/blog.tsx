@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { Calendar, User } from "lucide-react";
+import { Calendar, User, BookOpen } from "lucide-react";
 import styled from "styled-components";
-import Elixir from "../images/elixir.jpeg"
+import Elixir from "../images/elixir.jpeg";
 
 // Color constants based on the home page
 const colors = {
-  primary: '#663399', // Deep purple from the Technical Arsenal section
-  primaryLight: '#8652AD', // Lighter purple for hover states
-  secondary: '#4A5568', // For text
+  primary: '#663399',
+  primaryLight: '#8652AD',
+  secondary: '#4A5568',
   backgroundLight: '#F8F9FA',
   textPrimary: '#2D3748',
   textSecondary: '#4A5568',
@@ -30,6 +30,10 @@ const Title = styled.h1`
   color: ${colors.primary};
   margin-bottom: 1rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -181,16 +185,18 @@ const Blog = () => {
       author: "Dinesh Pandikona",
       excerpt: "Elixir is a dynamic, functional language designed for building scalable and maintainable applications.",
       categories: ["Programming", "Tutorial"],
-      image: Elixir,
+      image: Elixir
     }
   ];
 
   return (
     <BlogContainer>
       <BlogHeader>
-        <Title>Blog</Title>
+        <Title>
+          <BookOpen size={32} /> Explore & Learn
+        </Title>
         <Subtitle>
-          Explore articles about programming, technology, and software development
+          Discover articles on programming, technology, and spirituality.
         </Subtitle>
       </BlogHeader>
 
