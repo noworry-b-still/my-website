@@ -1,9 +1,39 @@
+/* Main container */
 .projects-container {
-  width: 800px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  justify-content: center; /* Center the grid horizontally */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #663399;
+  display: flex;
   align-items: center;
-  margin: 0 auto; /* Center the grid vertically */
+  justify-content: center;
+  gap: 5px;
+  /* Ensures spacing between text and emoji */
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
