@@ -17,3 +17,9 @@ Development is still in progress
 
 
 Feel free to tailor if needed.
+
+
+fix:
+1. navbar hamburger with responsvines
+2. overall font 
+3. overall spacing consistency
