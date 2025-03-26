@@ -30,7 +30,7 @@ const projects = [
       "Algorithm Design",
       "Visualization"
     ],
-    image: "",
+    image: "https://picsum.photos/200",
     link: "https://drive.google.com/file/d/your_maze_solver_link_here/view?usp=drive_link", // Replace with your actual project URL
   },
   {
