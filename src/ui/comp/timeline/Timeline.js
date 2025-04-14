@@ -1,4 +1,5 @@
-import "./Timeline.css"; // Make sure to create this file with the CSS above
+import React from "react";
+import "./Timeline.css";
 
 const Timeline = () => {
     const journeyData = [
@@ -6,13 +7,13 @@ const Timeline = () => {
             year: "2025",
             achievements: [
                 {
-                    text: "Seeking full-time software engineering roles in the U.S.",
-                    highlights: ["May"],
+                    text: "Available for Full-time SWE roles in the U.S from June 16th",
+                    highlights: ["June", "16th"],
                     skills: [],
                 },
                 {
                     text: "CGPA: 3.75/4",
-                    highlights: ["CGPA"],
+                    highlights: ["CGPA", "3.75/4"],
                     skills: [],
                 },
             ],
@@ -22,12 +23,12 @@ const Timeline = () => {
             achievements: [
                 {
                     text: "Earned Redis Professional Certification.",
-                    highlights: ["Redis Professional Certification"],
+                    highlights: ["Redis", "Professional"],
                     skills: [],
                 },
                 {
                     text: "Interned at Bose Professional, working on distributed systems.",
-                    highlights: ["Bose Professional"],
+                    highlights: ["Bose", "Professional"],
                     skills: ["Go", "Elixir"],
                 },
             ],
@@ -51,14 +52,14 @@ const Timeline = () => {
                     skills: [],
                 },
                 {
-                    text: "Graduated with 8.3/10 GPA from VNR VJIET.",
-                    highlights: ["8.3/10 GPA", "VNR VJIET"],
+                    text: "Graduated with 8.3/10 CGPA from VNR VJIET.",
+                    highlights: ["8.3/10", "CGPA"],
                     skills: [],
                 },
                 {
                     text: "Joined Deloitte as a full-time Analyst, working with various technologies.",
                     highlights: ["Deloitte"],
-                    skills: ["Python", "Java", "Relativity tools"],
+                    skills: ["Python",],
                 },
             ],
         },
@@ -66,14 +67,14 @@ const Timeline = () => {
             year: "2021",
             achievements: [
                 {
-                    text: "Interned at Blaze Automations, worked on time forecasting for elderly care.",
+                    text: "Interned at Blaze Automations, worked on time-series forecasting for elderly care.",
                     highlights: ["Blaze Automations"],
-                    skills: ["time forecasting"],
+                    skills: ["time-series", "forecasting",],
                 },
                 {
                     text: "Contributed to a published research paper, recognized by CEO.",
                     highlights: ["CEO"],
-                    skills: ["published research paper"],
+                    skills: ["research"],
                 },
                 {
                     text: "Failed Amazon SWE final round but secured an Analyst internship + full-time role at Deloitte.",
@@ -149,37 +150,42 @@ const Timeline = () => {
             <h2 className="journey-title">Journey So Far</h2>
             <div className="timeline-container">
                 {journeyData.map((item, index) => (
-                    <div className="timeline-item" key={index}>
+                    <div
+                        className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+                        key={index}
+                    >
                         <div className="timeline-year">{item.year}</div>
                         <div className="timeline-content">
                             {item.achievements.map((achievement, achievementIndex) => (
                                 <div className="achievement" key={achievementIndex}>
-                                    {achievement.text.split(" ").map((word, wordIndex) => {
-                                        // Check if the word is in highlights
-                                        const isHighlight = achievement.highlights.some(
-                                            (highlight) => word.includes(highlight)
-                                        );
-                                        // Check if the word is in skills
-                                        const isSkill = achievement.skills.some((skill) =>
-                                            word.includes(skill)
-                                        );
+                                    <span className="achievement-text">
+                                        {achievement.text.split(" ").map((word, wordIndex) => {
+                                            // Check if the word is in highlights
+                                            const isHighlight = achievement.highlights.some(
+                                                (highlight) => word.includes(highlight)
+                                            );
+                                            // Check if the word is in skills
+                                            const isSkill = achievement.skills.some((skill) =>
+                                                word.includes(skill)
+                                            );
 
-                                        if (isHighlight) {
-                                            return (
-                                                <span className="highlight" key={wordIndex}>
-                                                    {word}{" "}
-                                                </span>
-                                            );
-                                        } else if (isSkill) {
-                                            return (
-                                                <span className="skill-tag" key={wordIndex}>
-                                                    {word}{" "}
-                                                </span>
-                                            );
-                                        } else {
-                                            return <span key={wordIndex}>{word} </span>;
-                                        }
-                                    })}
+                                            if (isHighlight) {
+                                                return (
+                                                    <span className="highlight" key={wordIndex}>
+                                                        {word}{" "}
+                                                    </span>
+                                                );
+                                            } else if (isSkill) {
+                                                return (
+                                                    <span className="skill-tag" key={wordIndex}>
+                                                        {word}{" "}
+                                                    </span>
+                                                );
+                                            } else {
+                                                return <span key={wordIndex}>{word} </span>;
+                                            }
+                                        })}
+                                    </span>
                                 </div>
                             ))}
                         </div>

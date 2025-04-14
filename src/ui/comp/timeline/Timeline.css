@@ -1,156 +1,199 @@
 /* Timeline Container */
+.timeline-wrapper {
+  padding: 30px 0;
+  position: relative;
+}
+
+.journey-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: left;
+  color: #5a2d82;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #5a2d82;
+  padding-bottom: 10px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+}
+
+
+
 .timeline-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Timeline Line */
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Timeline Line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #5a2d82;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 10px;
+}
+
+/* Timeline Item Container */
+.timeline-item {
+  padding: 10px 0;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Left side items */
+.timeline-item.left {
+  left: 0;
+  padding-right: 40px;
+}
+
+/* Right side items */
+.timeline-item.right {
+  left: 50%;
+  padding-left: 40px;
+}
+
+/* Timeline Circle */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 4px solid #5a2d82;
+  border-radius: 50%;
+  z-index: 1;
+  top: 15px;
+}
+
+/* Circle position */
+.timeline-item.left::before {
+  right: -17px;
+}
+
+.timeline-item.right::before {
+  left: -17px;
+}
+
+/* Timeline Content */
+.timeline-content {
+  padding: 20px 25px;
+  background-color: white;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #5a2d82;
+  text-align: left;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Year Label */
+.timeline-year {
+  position: absolute;
+  background-color: #5a2d82;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-weight: bold;
+  z-index: 2;
+  top: 15px;
+}
+
+/* Year position */
+.timeline-item.left .timeline-year {
+  right: -70px;
+}
+
+.timeline-item.right .timeline-year {
+  left: -70px;
+}
+
+/* Achievement Styles */
+.achievement {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.achievement::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #5a2d82;
+  font-weight: bold;
+}
+
+/* Highlights */
+.highlight {
+  background-color: rgba(90, 45, 130, 0.15);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #5a2d82;
+  display: inline-block;
+}
+
+/* Skills Tag */
+.skill-tag {
+  display: inline-block;
+  background-color: #e7ebc5;
+  color: #444;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 2px;
+  font-size: 0.85em;
+  border: 1px solid #5a2d82;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
   .timeline-container::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #5a2d82;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    margin-left: -3px;
-    border-radius: 10px;
+    left: 30px;
   }
-  
-  /* Timeline Item Container */
+
   .timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
     width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 0;
   }
-  
-  /* Timeline Circle */
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 10px;
-    background-color: white;
-    border: 4px solid #5a2d82;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  /* Timeline Content */
-  .timeline-content {
-    padding: 15px 20px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid #5a2d82;
-  }
-  
-  .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Year Label */
-  .timeline-year {
-    position: absolute;
-    top: 18px;
-    left: -30px;
-    transform: translateX(-50%);
-    background-color: #5a2d82;
-    color: white;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-weight: bold;
-    z-index: 2;
-  }
-  
-  /* Achievement Styles */
-  .achievement {
-    margin-bottom: 10px;
-    padding-left: 25px;
-    position: relative;
-  }
-  
-  .achievement::before {
-    content: '→';
-    position: absolute;
+
+  .timeline-item.left,
+  .timeline-item.right {
     left: 0;
-    color: #5a2d82;
-    font-weight: bold;
+    padding-left: 70px;
+    padding-right: 0;
   }
-  
-  /* Highlights */
-  .highlight {
-    background-color: rgba(90, 45, 130, 0.15);
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-weight: 600;
-    color: #5a2d82;
+
+  .timeline-item::before {
+    left: 18px;
+    right: auto;
   }
-  
-  /* Skills Tag */
-  .skill-tag {
-    display: inline-block;
-    background-color: #e7ebc5;
-    color: #444;
-    border-radius: 4px;
-    padding: 2px 6px;
-    margin: 2px;
-    font-size: 0.85em;
-    border: 1px solid #5a2d82;
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 18px;
+    right: auto;
   }
-  
-  /* Responsive adjustments */
-  @media screen and (min-width: 768px) {
-    .timeline-container::after {
-      left: 50%;
-    }
-    
-    .timeline-item {
-      width: 50%;
-      padding: 10px 30px;
-    }
-    
-    .timeline-item:nth-child(odd) {
-      left: 0;
-    }
-    
-    .timeline-item:nth-child(even) {
-      left: 50%;
-    }
-    
-    .timeline-item::before {
-      left: auto;
-      right: -17px;
-    }
-    
-    .timeline-item:nth-child(even)::before {
-      left: -17px;
-      right: auto;
-    }
-    
-    .timeline-year {
-      left: auto;
-      right: -30px;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-year {
-      left: -30px;
-      right: auto;
-    }
+
+  .timeline-year {
+    left: 0;
+    right: auto !important;
+    top: 15px;
+    transform: translateX(-50%);
   }
-  
-  @media screen and (max-width: 767px) {
-    .timeline-year {
-      left: 20px;
-      transform: none;
-    }
-  }
+}
