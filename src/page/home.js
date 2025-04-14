@@ -5,6 +5,7 @@ import Timeline from "../ui/comp/timeline/Timeline";
 import ScrollButton from "../ui/comp/scrollButton/ScrollButton";
 import "./home.css";
 import GeneratedAudioBackground from '../ui/comp/generated_audio/GeneratedAudioBackground';
+import WaveBackground from '../ui/comp/wave_background/WaveBackground';
 
 function Home() {
   const [backgroundLoaded, setBackgroundLoaded] = useState(false);
@@ -26,6 +27,7 @@ function Home() {
 
   return (
     <>
+      <WaveBackground />
       <GeneratedAudioBackground onVisibilityChange={handleAudioVisibilityChange} />
 
       <div className="home-container">

@@ -1,0 +1,53 @@
+.wave-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('/src/images/wave.svg');
+    background-size: 1000px 100px;
+    animation: wave 10s linear infinite;
+    opacity: 0.3;
+}
+
+.wave2 {
+    animation: wave2 15s linear infinite;
+    opacity: 0.2;
+    bottom: 10px;
+}
+
+.wave3 {
+    animation: wave 20s -5s linear infinite;
+    opacity: 0.1;
+    bottom: 15px;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
+}

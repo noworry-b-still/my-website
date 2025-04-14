@@ -66,13 +66,7 @@
 } */
 
 body {
-  background-image: radial-gradient(at 18% -4%,
-      #989788 0%,
-      transparent 7%),
-    radial-gradient(at 78% 49%, #51344D 0%, transparent 8%),
-    radial-gradient(at 10% -6%, #6F5060 0%, transparent 8%),
-    radial-gradient(at 98% 47%, #A78682 0%, transparent 12%),
-    radial-gradient(at 98% 47%, #E7EBC5 0%, transparent 12%);
+
   /* Initial background position */
   background-position: 0% 0%, 100% 100%;
 
@@ -94,6 +88,26 @@ body {
   background: linear-gradient(to bottom, #faf6ff, #ffffff);
 
 }
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f8f8fb 100%);
+  position: relative;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%235a2d82' fill-opacity='0.07'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20.83l2.83-2.83 1.41 1.41L1.41 22H0v-1.17zM0 3.07l2.83-2.83 1.41 1.41L1.41 4.24H0V3.07zM17.76 40l-2.83-2.83 1.41-1.41L20 38.59V40h-2.24zM0 17.17l2.83-2.83 1.41 1.41L1.41 18H0v-.83zM0 0L2.83 2.83 1.41 4.24 0 2.83V0zm20 0v1.41l-2.83 2.83-1.41-1.41L18.59 0H20zM0 36.76l2.83-2.83 1.41 1.41L1.41 38H0v-1.24zm19.17-20l-2.83-2.83 1.41-1.41L20 14.76v1.17h-.83z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
+}
+
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(90, 45, 130, 0.05) 0%, rgba(140, 65, 200, 0.05) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 1 100%);
+  z-index: -1;
+}
+
 
 /* Apply glassmorphism effect to the main content area if needed */
 .main-content {
