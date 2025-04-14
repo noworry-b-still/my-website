@@ -17,27 +17,27 @@ function Navbar() {
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
           <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            <Home size={20} className="icon" /> Home
+            Home
           </NavLink>
         </li>
         <li>
           <NavLink to="/projects" onClick={() => setMenuOpen(false)}>
-            <Briefcase size={20} className="icon" /> Projects
+            Projects
           </NavLink>
         </li>
         <li>
           <a href="/data/Dinesh_Pandikona_Resume.pdf" target="_blank" rel="noopener noreferrer">
-            <FileText size={20} className="icon" /> Resume
+            Resume
           </a>
         </li>
         <li>
           <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
-            <Newspaper size={20} className="icon" /> Blog
+            Blog
           </NavLink>
         </li>
         <li>
           <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
-            <Mail size={20} className="icon" /> Connect
+            Connect
           </NavLink>
         </li>
       </ul>
