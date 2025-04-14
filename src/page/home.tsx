@@ -9,12 +9,12 @@ function Home() {
   return (
     <div className="home-container">
       <div className="profile-section">
-        <img
+        {/* <img
           src={profilePic}
           className="fixed-profile-pic"
           alt="Profile"
           style={{ border: "2px solid #5a2d82" }}
-        />
+        /> */}
         <div className="profile-details">
           <Intro />
 

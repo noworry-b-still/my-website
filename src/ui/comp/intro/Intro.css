@@ -1,0 +1,512 @@
+/* CreativeIntro.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* Main container with relative positioning for canvas overlay */
+.creative-intro-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Canvas for particle network effect */
+.particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Wrapper for content that goes over the canvas */
+.intro-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Header section with greeting and avatar */
+.creative-intro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.creative-intro-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            rgba(90, 45, 130, 0) 0%,
+            rgba(90, 45, 130, 0.5) 50%,
+            rgba(90, 45, 130, 0) 100%);
+}
+
+/* Greeting container */
+.greeting-container {
+    position: relative;
+}
+
+.neon-text-container {
+    position: relative;
+}
+
+.intro-greeting {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #5a2d82;
+    margin: 0;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Glitch effect for name */
+.intro-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #5a2d82;
+    margin: 0.25rem 0 0 0;
+    position: relative;
+    letter-spacing: -0.5px;
+}
+
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    animation: glitch-effect 3s infinite;
+    color: #6a3d92;
+    clip: rect(44px, 450px, 56px, 0);
+    left: 2px;
+}
+
+.glitch::after {
+    animation: glitch-effect 2s infinite;
+    color: #4a1d72;
+    clip: rect(44px, 450px, 46px, 0);
+    left: -2px;
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip: rect(42px, 9999px, 21px, 0);
+    }
+
+    5% {
+        clip: rect(12px, 9999px, 78px, 0);
+    }
+
+    10% {
+        clip: rect(48px, 9999px, 53px, 0);
+    }
+
+    15% {
+        clip: rect(45px, 9999px, 56px, 0);
+    }
+
+    20% {
+        clip: rect(88px, 9999px, 98px, 0);
+    }
+
+    25% {
+        clip: rect(54px, 9999px, 67px, 0);
+    }
+
+    30% {
+        clip: rect(23px, 9999px, 85px, 0);
+    }
+
+    35% {
+        clip: rect(46px, 9999px, 57px, 0);
+    }
+
+    40% {
+        clip: rect(38px, 9999px, 92px, 0);
+    }
+
+    45% {
+        clip: rect(47px, 9999px, 35px, 0);
+    }
+
+    50% {
+        clip: rect(12px, 9999px, 23px, 0);
+    }
+
+    55% {
+        clip: rect(32px, 9999px, 12px, 0);
+    }
+
+    60% {
+        clip: rect(64px, 9999px, 76px, 0);
+    }
+
+    65% {
+        clip: rect(98px, 9999px, 86px, 0);
+    }
+
+    70% {
+        clip: rect(25px, 9999px, 35px, 0);
+    }
+
+    75% {
+        clip: rect(45px, 9999px, 63px, 0);
+    }
+
+    80% {
+        clip: rect(67px, 9999px, 98px, 0);
+    }
+
+    85% {
+        clip: rect(34px, 9999px, 15px, 0);
+    }
+
+    90% {
+        clip: rect(51px, 9999px, 69px, 0);
+    }
+
+    95% {
+        clip: rect(89px, 9999px, 56px, 0);
+    }
+
+    100% {
+        clip: rect(42px, 9999px, 21px, 0);
+    }
+}
+
+/* Waving hand emoji with animation */
+.waving-hand {
+    font-size: 3rem;
+    position: absolute;
+    right: -60px;
+    top: 10px;
+    transform-origin: bottom right;
+    animation: wave-animation 2.5s ease-in-out infinite;
+}
+
+@keyframes wave-animation {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+}
+
+/* Hexagonal avatar */
+.avatar-container {
+    position: relative;
+}
+
+.avatar-hexagon {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    background-color: #d4c0e6;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(90, 45, 130, 0.3);
+    z-index: 1;
+}
+
+.avatar-image {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-image: url('/src/images/profile-pic.png');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+/* Intro sections container */
+.intro-sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual section styling */
+.intro-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(90, 45, 130, 0.1);
+    overflow: hidden;
+}
+
+.intro-section.with-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(90, 45, 130, 0.05) 0%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(90, 45, 130, 0.05) 100%);
+    z-index: -1;
+}
+
+.intro-section:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(90, 45, 130, 0.1);
+}
+
+/* Icon container with glow effect */
+.section-icon-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(90, 45, 130, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.intro-section:hover .section-icon-container {
+    background-color: rgba(90, 45, 130, 0.2);
+}
+
+.intro-icon {
+    width: 24px;
+    height: 24px;
+    color: #5a2d82;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(90, 45, 130, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: scale(1.5);
+}
+
+.intro-section:hover .icon-glow {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(2);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
+}
+
+/* Section content */
+.section-content {
+    flex: 1;
+}
+
+.intro-text {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Highlight elements */
+.highlight-emoji {
+    display: inline-block;
+    transform: scale(1.4);
+    margin: 0 0.2rem;
+    transition: transform 0.3s ease;
+}
+
+.intro-section:hover .highlight-emoji {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1.4);
+    }
+
+    50% {
+        transform: scale(1.6);
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #5a2d82, #8d4caf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+
+.highlight-text {
+    color: #5a2d82;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #5a2d82, transparent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+}
+
+.intro-section:hover .highlight-text::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #5a2d82;
+    }
+}
+
+/* Arsenal wrapper */
+.arsenal-wrapper {
+    position: relative;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+    .creative-intro-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .waving-hand {
+        position: static;
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    .intro-name {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro-section {
+        padding: 1.25rem;
+    }
+
+    .intro-name {
+        font-size: 2.5rem;
+    }
+
+    .avatar-hexagon {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro-section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .section-icon-container {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .intro-name {
+        font-size: 2rem;
+    }
+
+    .intro-greeting {
+        font-size: 1.5rem;
+    }
+
+    .avatar-hexagon {
+        width: 120px;
+        height: 120px;
+    }
+}

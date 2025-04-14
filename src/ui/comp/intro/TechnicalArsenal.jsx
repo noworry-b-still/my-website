@@ -1,57 +1,6 @@
 import React from 'react';
 import { Code, GitBranch, Database, Layout, Hammer } from 'lucide-react';
-
-const styles = {
-  container: {
-    marginTop: '1.5rem',
-  },
-  heading: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
-    marginBottom: '1.25rem',
-    color: '#374151',
-  },
-  sectionTitle: {
-    fontSize: '1.5rem',
-    fontWeight: '600',
-    color: '#5a2d82',
-  },
-  grid: {
-    padding: '0 2rem',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '2rem',
-  },
-  category: {
-    marginBottom: '1.5rem',
-  },
-  categoryTitle: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
-    fontSize: '1.125rem',
-    fontWeight: '600',
-    color: '#4B5563',
-    marginBottom: '0.75rem',
-  },
-  skillsList: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '0.5rem',
-  },
-  skill: {
-    padding: '0.25rem 0.75rem',
-    borderRadius: '1rem',
-    fontSize: '0.95rem',
-    backgroundColor: '#f3f4f6',
-    color: '#4B5563',
-  },
-  favoriteSkill: {
-    backgroundColor: '#5a2d82',
-    color: 'white',
-  }
-};
+import './TechnicalArsenal.css';
 
 const TechnicalArsenal = () => {
   const skills = {
@@ -67,65 +16,71 @@ const TechnicalArsenal = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.heading}>
-        <Code size={24} color="#5a2d82" />
-        <h2 style={styles.sectionTitle}>Technical Arsenal</h2>
+    <div className="arsenal-container">
+      <div className="arsenal-header">
+        <Code size={24} className="arsenal-header-icon" />
+        <h2 className="arsenal-title">Technical Arsenal</h2>
       </div>
 
-      <div style={styles.grid}>
-        <div style={styles.category}>
-          <div style={styles.categoryTitle}>
-            <GitBranch size={20} />
-            Languages & Runtime
+      <div className="arsenal-grid">
+        <div className="arsenal-category">
+          <div className="category-header">
+            <GitBranch size={20} className="category-icon" />
+            <h3 className="category-title">Languages & Runtime</h3>
           </div>
-          <div style={styles.skillsList}>
+          <div className="skills-list">
             {skills.languages.favorite.map(skill => (
               <span
                 key={skill}
-                style={{ ...styles.skill, ...styles.favoriteSkill }}
+                className="skill-tag favorite"
               >
                 {skill}
               </span>
             ))}
             {skills.languages.other.map(skill => (
-              <span key={skill} style={styles.skill}>{skill}</span>
+              <span key={skill} className="skill-tag">{skill}</span>
             ))}
           </div>
         </div>
 
-        <div style={styles.category}>
-          <div style={styles.categoryTitle}>
-            <Layout size={20} />
-            Paradigms & Frameworks
+        <div className="arsenal-category">
+          <div className="category-header">
+            <Layout size={20} className="category-icon" />
+            <h3 className="category-title">Paradigms & Frameworks</h3>
           </div>
-          <div style={styles.skillsList}>
-            {[...skills.paradigms, ...skills.frameworks].map(skill => (
-              <span key={skill} style={styles.skill}>{skill}</span>
+          <div className="skills-list">
+            {skills.paradigms.map(skill => (
+              <span key={skill} className="skill-tag paradigm">{skill}</span>
+            ))}
+            {skills.frameworks.map(skill => (
+              <span key={skill} className="skill-tag framework">{skill}</span>
             ))}
           </div>
         </div>
 
-        <div style={styles.category}>
-          <div style={styles.categoryTitle}>
-            <Database size={20} />
-            Databases & Infrastructure
+        <div className="arsenal-category">
+          <div className="category-header">
+            <Database size={20} className="category-icon" />
+            <h3 className="category-title">Databases & Infrastructure</h3>
           </div>
-          <div style={styles.skillsList}>
-            {[...skills.databases, ...skills.additional].map(skill => (
-              <span key={skill} style={styles.skill}>{skill}</span>
+          <div className="skills-list">
+            {skills.databases.map(skill => (
+              <span key={skill} className="skill-tag database">{skill}</span>
+            ))}
+            {skills.additional.map(skill => (
+              <span key={skill} className="skill-tag additional">{skill}</span>
             ))}
           </div>
         </div>
 
-        <div style={styles.category}>
-          <div style={styles.categoryTitle}>
-            <Hammer size={20} />
-            Developer Tools
+        <div className="arsenal-category">
+          <div className="category-header">
+            <Hammer size={20} className="category-icon" />
+            <h3 className="category-title">Developer Tools</h3>
           </div>
-          <div style={styles.skillsList}>
+          <div className="skills-list">
             {skills.tools.map(skill => (
-              <span key={skill} style={styles.skill}>{skill}</span>
+              <span key={skill} className="skill-tag tool">{skill}</span>
             ))}
           </div>
         </div>
