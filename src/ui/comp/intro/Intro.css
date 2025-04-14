@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
-/* Main container with relative positioning for canvas overlay */
+
 .creative-intro-container {
     position: relative;
     overflow: hidden;
@@ -14,7 +14,6 @@
     color: #333;
 }
 
-/* Canvas for particle network effect */
 .particles-canvas {
     position: absolute;
     top: 0;
@@ -25,11 +24,30 @@
     pointer-events: none;
 }
 
-/* Wrapper for content that goes over the canvas */
+/* Important override - make sure the container receives mouse events */
+.creative-intro-container {
+    z-index: 0;
+}
+
 .intro-content-wrapper {
     position: relative;
     z-index: 2;
-    width: 100%;
+    pointer-events: auto;
+    /* Ensure content receives pointer events */
+}
+
+/* Debug styling - optional */
+.particles-debug {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    z-index: 1000;
+    font-size: 12px;
 }
 
 /* Header section with greeting and avatar */

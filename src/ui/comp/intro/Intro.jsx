@@ -1,36 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Terminal, Cpu, Network } from 'lucide-react';
 import TechnicalArsenal from './TechnicalArsenal';
 import './Intro.css';
 
 const Intro = () => {
     const canvasRef = useRef(null);
-    const particlesRef = useRef([]);
-    const mousePositionRef = useRef({ x: 0, y: 0 });
+    const containerRef = useRef(null);
+    const [particles, setParticles] = useState([]);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [debug, setDebug] = useState({ width: 0, height: 0, mouseX: 0, mouseY: 0 });
+    const [showDebug, setShowDebug] = useState(false); // Set to true to show debug info
 
-    // Initialize particles for network effect background
+    // Initialize canvas and particles
     useEffect(() => {
         const canvas = canvasRef.current;
+        const container = containerRef.current;
         const ctx = canvas.getContext('2d');
-        let animationFrameId;
 
-        // Set canvas dimensions to match parent container
-        const resizeCanvas = () => {
-            const container = canvas.parentElement;
+        // Handle resize
+        const handleResize = () => {
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
 
-            // Initialize particles when canvas is resized
-            initializeParticles();
-        };
+            setDebug(prev => ({
+                ...prev,
+                width: canvas.width,
+                height: canvas.height
+            }));
 
-        // Create particles
-        const initializeParticles = () => {
+            // Create particles
             const particleCount = Math.min(100, Math.floor(canvas.width * canvas.height / 10000));
-            particlesRef.current = [];
+            const newParticles = [];
 
             for (let i = 0; i < particleCount; i++) {
-                particlesRef.current.push({
+                newParticles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     size: Math.random() * 2 + 0.5,
@@ -39,90 +42,137 @@ const Intro = () => {
                     color: `rgba(90, 45, 130, ${Math.random() * 0.5 + 0.1})`
                 });
             }
+
+            setParticles(newParticles);
         };
 
-        // Animation loop
+        // Set initial canvas size and particles
+        handleResize();
+
+        // Add resize listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    // Handle mouse movement
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            const rect = containerRef.current.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            setMousePos({ x, y });
+            setDebug(prev => ({
+                ...prev,
+                mouseX: x.toFixed(0),
+                mouseY: y.toFixed(0)
+            }));
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
+    // Animation loop
+    useEffect(() => {
+        if (!canvasRef.current || particles.length === 0) return;
+
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        let animationId;
+
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Update and draw particles
-            particlesRef.current.forEach((particle, index) => {
-                particle.x += particle.speedX;
-                particle.y += particle.speedY;
+            // Update particles
+            const updatedParticles = particles.map(particle => {
+                // Move particle
+                let x = particle.x + particle.speedX;
+                let y = particle.y + particle.speedY;
+                let speedX = particle.speedX;
+                let speedY = particle.speedY;
 
                 // Boundary check
-                if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
-                if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
+                if (x < 0 || x > canvas.width) speedX *= -1;
+                if (y < 0 || y > canvas.height) speedY *= -1;
+
+                // Update position with boundary reflection
+                x = Math.max(0, Math.min(canvas.width, x));
+                y = Math.max(0, Math.min(canvas.height, y));
 
                 // Draw particle
                 ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.arc(x, y, particle.size, 0, Math.PI * 2);
                 ctx.fillStyle = particle.color;
                 ctx.fill();
 
-                // Connect particles close to mouse
-                const mouseDistance = Math.hypot(
-                    particle.x - mousePositionRef.current.x,
-                    particle.y - mousePositionRef.current.y
-                );
-
+                // Connect to mouse if close enough
+                const mouseDistance = Math.hypot(x - mousePos.x, y - mousePos.y);
                 if (mouseDistance < 120) {
                     ctx.beginPath();
                     ctx.strokeStyle = `rgba(90, 45, 130, ${0.3 * (1 - mouseDistance / 120)})`;
                     ctx.lineWidth = 0.5;
-                    ctx.moveTo(particle.x, particle.y);
-                    ctx.lineTo(mousePositionRef.current.x, mousePositionRef.current.y);
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(mousePos.x, mousePos.y);
                     ctx.stroke();
                 }
 
-                // Connect nearby particles
-                for (let j = index + 1; j < particlesRef.current.length; j++) {
-                    const otherParticle = particlesRef.current[j];
-                    const distance = Math.hypot(
-                        particle.x - otherParticle.x,
-                        particle.y - otherParticle.y
-                    );
+                return {
+                    ...particle,
+                    x,
+                    y,
+                    speedX,
+                    speedY
+                };
+            });
+
+            // Connect nearby particles
+            for (let i = 0; i < updatedParticles.length; i++) {
+                const p1 = updatedParticles[i];
+
+                for (let j = i + 1; j < updatedParticles.length; j++) {
+                    const p2 = updatedParticles[j];
+                    const distance = Math.hypot(p1.x - p2.x, p1.y - p2.y);
 
                     if (distance < 100) {
                         ctx.beginPath();
                         ctx.strokeStyle = `rgba(90, 45, 130, ${0.2 * (1 - distance / 100)})`;
                         ctx.lineWidth = 0.3;
-                        ctx.moveTo(particle.x, particle.y);
-                        ctx.lineTo(otherParticle.x, otherParticle.y);
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
                         ctx.stroke();
                     }
                 }
-            });
+            }
 
-            animationFrameId = requestAnimationFrame(animate);
+            setParticles(updatedParticles);
+            animationId = requestAnimationFrame(animate);
         };
 
-        // Track mouse position
-        const handleMouseMove = (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mousePositionRef.current = {
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top
-            };
-        };
-
-        // Initialize
-        window.addEventListener('resize', resizeCanvas);
-        canvas.addEventListener('mousemove', handleMouseMove);
-        resizeCanvas();
         animate();
 
-        // Cleanup
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
-            canvas.removeEventListener('mousemove', handleMouseMove);
-            cancelAnimationFrame(animationFrameId);
+            cancelAnimationFrame(animationId);
         };
-    }, []);
+    }, [particles, mousePos]);
 
     return (
-        <div className="creative-intro-container">
+        <div className="creative-intro-container" ref={containerRef}>
             <canvas ref={canvasRef} className="particles-canvas"></canvas>
+
+            {showDebug && (
+                <div className="particles-debug">
+                    Canvas: {debug.width}x{debug.height}<br />
+                    Mouse: {debug.mouseX}, {debug.mouseY}
+                </div>
+            )}
 
             <div className="intro-content-wrapper">
                 <div className="creative-intro-header">
