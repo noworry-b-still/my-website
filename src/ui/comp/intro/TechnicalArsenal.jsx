@@ -56,8 +56,8 @@ const styles = {
 const TechnicalArsenal = () => {
   const skills = {
     languages: {
-      favorite: ['Python', 'Rust', 'Elixir'],
-      other: ['JavaScript', 'TypeScript', 'Go', 'Java', 'SQL'],
+      favorite: ['Python', 'Rust', 'Elixir', 'JavaScript', 'TypeScript', 'Go', 'Java', 'SQL'],
+      other: [],
     },
     paradigms: ['Object-Oriented Programming', 'Functional Programming'],
     frameworks: ['Django', 'React', 'Phoenix'],
@@ -85,7 +85,7 @@ const TechnicalArsenal = () => {
                 key={skill}
                 style={{ ...styles.skill, ...styles.favoriteSkill }}
               >
-                {skill} ★
+                {skill}
               </span>
             ))}
             {skills.languages.other.map(skill => (
