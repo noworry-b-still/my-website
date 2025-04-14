@@ -1,22 +1,50 @@
 import React from "react";
-import { Certificate } from "../../types";
 import "./certificate.css";
 
 interface CertificateCardProps {
-  certificate: Certificate;
+  certificate: {
+    name: string;
+    certifiedBy: string;
+    tags: string[];
+    certificateUrl: string;
+    imageUrl?: string;
+    description?: string;
+    level?: string;
+    issueDate?: string;
+  };
 }
 
 const CertificateCard: React.FC<CertificateCardProps> = ({ certificate }) => {
+  // Function to determine the level class
+  const getLevelClass = (level?: string) => {
+    if (!level) return "";
+    return `level-${level.toLowerCase()}`;
+  };
+
   return (
     <div className="certificate_card">
+      {certificate.level && (
+        <div className={`certificate-level ${getLevelClass(certificate.level)}`}>
+          {certificate.level}
+        </div>
+      )}
+
       <div className="certificate_details">
-        <div>
+
+
+        <div className="certificate_info">
           <h2>{certificate.name}</h2>
-          <p>Certified by: {certificate.certifiedBy}</p>
+          <p className="certified-by">Certified by: {certificate.certifiedBy}</p>
+          {certificate.issueDate && (
+            <p className="certificate-date">Issued: {certificate.issueDate}</p>
+          )}
+          {/* {certificate.description && (
+            <p className="certificate-description">{certificate.description}</p>
+          )} */}
         </div>
 
-        <div>
-          <p>{"#Tags"}</p>
+        <div className="certificate_tags">
+          <p className="tags-title">#Tags</p>
           <div className="tag-container">
             {certificate.tags.map((tag, index) => (
               <div key={index} className="tag">

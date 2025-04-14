@@ -9,13 +9,13 @@ const certificates = [
     imageUrl: "dummy",
     certificateUrl:
       "https://www.educative.io/verify-certificate/P1vxGOto783mKogVoFm7n8W54x5Jfl",
-    description: "Description for Certificate 3",
+    description: "Comprehensive Rust programming fundamentals",
     tags: [
+      "Programming Languages",
       "Rust",
-      "Data Structures",
-      "Memory Management",
-      "Systems Programming",
     ],
+    level: "Beginner",
+    issueDate: "2023-11-15"
   },
   {
     name: "Redis Developer - Professional",
@@ -23,8 +23,10 @@ const certificates = [
     imageUrl: redis_developer,
     certificateUrl:
       "https://www.credential.net/8781edb5-6886-43ec-80a5-2be1d490e62d",
-    description: "Description for Certificate 1",
-    tags: ["Certification", "Redis", "High Performance", "Backend"],
+    description: "Professional-level Redis implementation and architecture",
+    tags: ["Certification", "Databases"],
+    level: "Professional",
+    issueDate: "2024-03-22"
   },
   {
     name: "Graph Developer - Associate",
@@ -32,20 +34,22 @@ const certificates = [
     imageUrl: "dummy",
     certificateUrl:
       "https://www.apollographql.com/tutorials/certifications/e31484fc-ed45-4b61-a891-58b5f317d2c5",
-    description: "Description for Certificate 1",
-    tags: ["Certification", "GraphQL", "API layer", "Apollo"],
+    description: "GraphQL API development with Apollo",
+    tags: ["Certification", "Backend"],
+    level: "Associate",
+    issueDate: "2023-07-10"
   },
-
   {
     name: "Intermediate Machine Learning",
     certifiedBy: "Kaggle",
     imageUrl: "https://www.kaggle.com/learn/certification/teslaatoz/intermediate-machine-learning",
     certificateUrl:
       "https://www.kaggle.com/learn/certification/teslaatoz/intermediate-machine-learning",
-    description: "Description for Certificate 2",
-    tags: ["Certificate", "Pandas", "Classification", "Regression"],
+    description: "Advanced ML techniques and model optimization",
+    tags: ["ML/AI", "Algorithms"],
+    level: "Intermediate",
+    issueDate: "2022-12-05"
   },
-
 ];
 
 export default certificates;
