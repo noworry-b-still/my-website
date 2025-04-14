@@ -1,20 +1,18 @@
+/* ScrollButton.css */
 .scroll-button-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   transition: opacity 0.5s ease-in;
-  /* Smooth fade-in effect */
+  z-index: 90;
+  /* Lower than audio controls */
 }
 
 .scroll-button {
   border: none;
-
   border-radius: 50%;
-  /* Make it round */
   width: 60px;
-  /* Adjust the size */
   height: 60px;
-  /* Adjust the size */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,11 +20,23 @@
   color: white;
   cursor: pointer;
   background-color: #8E44AD;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  transform: translateY(-3px);
+  background-color: #9b59b6;
+}
+
+/* Move up when audio controls are visible */
+.scroll-button-with-audio {
+  bottom: 100px;
+  /* Adjust based on your audio control height */
 }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
-    /* End with full opacity */
   }
 }
