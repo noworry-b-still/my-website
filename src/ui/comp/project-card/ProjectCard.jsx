@@ -1,25 +1,30 @@
-import { Code } from "lucide-react";
-import "./ProjectCard.css";
+import React from "react";
+import "./ProjectCard.css"; // Make sure to create this file with the styles
 
 const ProjectCard = ({ name, description, technologies, image, link }) => {
   return (
     <div className="project-card">
-      <img src={image} alt={name} className="project-card-image" />
-      <div className="project-card-content">
-        <h2 className="project-card-name">{name}</h2>
-        <p className="project-card-description">{description}</p>
+      <div className="project-image-container">
+        <img src={image} alt={name} className="project-image" />
+        <div className="project-overlay"></div>
+      </div>
 
-        <ul className="project-card-technologies">
+      <div className="project-content">
+        <h3 className="project-title">{name}</h3>
+
+        <p className="project-description">{description}</p>
+
+        <div className="project-tech">
           {technologies.map((tech, index) => (
-            <li key={index}><Code size={16} /> {tech}</li>
+            <span key={index} className="tech-tag">
+              {tech}
+            </span>
           ))}
-        </ul>
-
-        <div className="project-card-actions">
-          <a href={link} className="project-card-link" target="_blank" rel="noopener noreferrer">
-            View Project
-          </a>
         </div>
+
+        <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
+          View Project
+        </a>
       </div>
     </div>
   );
