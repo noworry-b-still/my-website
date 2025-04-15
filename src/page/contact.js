@@ -1,19 +1,19 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importing icons
+import { FaGithub, FaLinkedin, FaClock } from "react-icons/fa";
+import { Handshake, AlertCircle } from "lucide-react";
 import "./contact.css";
-import { Handshake } from "lucide-react";
 
-const Contact = () => {
+const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // New state for loading
+  const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(""); // Reset error message
-    setIsLoading(true); // Set loading to true
+    setError("");
+    setIsLoading(true);
 
     // Accessing environment variables
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -24,79 +24,161 @@ const Contact = () => {
       .sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
         setIsSubmitted(true);
-        form.current.reset(); // Clear form fields after submission
+        form.current.reset();
       })
       .catch((error) => {
         console.error("Error sending email:", error.text);
         setError("Failed to send message. Please try again later.");
       })
       .finally(() => {
-        setIsLoading(false); // Set loading to false
+        setIsLoading(false);
       });
   };
 
   return (
     <div className="contact-container">
-      <h1 className="projects-title">
-        <Handshake size={32} />Connect With Me
-      </h1>
-
-      <div className="contact-info">
-        <div className="social-buttons">
-          <a
-            href="https://github.com/noworry-b-still"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-button github"
-          >
-            <FaGithub className="icon" /> GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dinesh-pandikona/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-button linkedin"
-          >
-            <FaLinkedin className="icon" /> LinkedIn
-          </a>
+      {/* Header */}
+      <div className="contact-header">
+        <div className="particles">
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
         </div>
 
+        <div className="title-wrapper">
+          <h1 className="contact-title">
+            <Handshake size={36} className="connect-icon" />
+            Connect With Me
+            <div className="title-underline"></div>
+          </h1>
+        </div>
+        <p className="subtitle">Let's collaborate on something amazing! Reach out through social media or send me a message directly.</p>
       </div>
-      <hr /> {/* Separator */}
-      <div className="contact-form">
-        {isSubmitted ? (
-          <div className="success-message">
-            <h3>Thank you for your message!</h3>
-            <p>I'll get back to you soon.</p>
+
+      {/* Content */}
+      <div className="contact-content">
+        {/* Social Connect Section */}
+        <div className="social-connect">
+          <h2 className="section-title">Find Me Online</h2>
+
+          <div className="social-buttons">
+            <a
+              href="https://github.com/noworry-b-still"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button github"
+            >
+              <FaGithub className="icon" /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dinesh-pandikona/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button linkedin"
+            >
+              <FaLinkedin className="icon" /> LinkedIn
+            </a>
           </div>
-        ) : (
-          <form ref={form} onSubmit={handleSubmit}>
-            <label>
-              Name:
-              <input type="text" name="user_name" required />
-            </label>
-            <label>
-              Email:
-              <input type="email" name="user_email" required />
-            </label>
-            <label>
-              Message:
-              <textarea
-                name="message"
-                rows="5"
-                required
-                style={{ resize: "none", overflow: "hidden" }} // Prevent resizing
-              ></textarea>
-            </label>
-            <button type="submit" disabled={isLoading}>
-              {isLoading ? "Sending..." : "Send Message"}
-            </button>
-            {error && <p className="error-message">{error}</p>}
-          </form>
-        )}
+
+          <div className="contact-availability">
+            <h3 className="availability-title">
+              <FaClock className="availability-icon" />
+              Availability
+            </h3>
+            <p className="availability-details">
+              I typically respond within 24-48 hours. For urgent inquiries, please mention it in your message.
+            </p>
+          </div>
+
+          <div className="floating-shapes">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+          </div>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="contact-form-section">
+          <h2 className="section-title">Send a Message</h2>
+
+          {isSubmitted ? (
+            <div className="success-message">
+              <div className="success-icon">✓</div>
+              <h3 className="success-title">Message Sent Successfully!</h3>
+              <p className="success-subtitle">
+                Thank you for reaching out. I'll get back to you soon.
+              </p>
+            </div>
+          ) : (
+            <form ref={form} onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="user_name"
+                  placeholder=" "
+                  required
+                />
+                <label htmlFor="name" className="form-label">
+                  Your Name
+                </label>
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="user_email"
+                  placeholder=" "
+                  required
+                />
+                <label htmlFor="email" className="form-label">
+                  Your Email
+                </label>
+              </div>
+
+              <div className="form-group">
+                <textarea
+                  className="form-control"
+                  id="message"
+                  name="message"
+                  placeholder=" "
+                  required
+                ></textarea>
+                <label htmlFor="message" className="form-label">
+                  Your Message
+                </label>
+              </div>
+
+              <button type="submit" className="submit-btn" disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    Sending
+                    <span className="loading-dots">
+                      <span className="dot"></span>
+                      <span className="dot"></span>
+                      <span className="dot"></span>
+                    </span>
+                  </>
+                ) : (
+                  "Send Message"
+                )}
+              </button>
+
+              {error && (
+                <div className="error-message">
+                  <AlertCircle size={16} />
+                  {error}
+                </div>
+              )}
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Contact;
+export default ContactPage;
