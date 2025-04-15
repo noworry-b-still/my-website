@@ -6,10 +6,11 @@ import './Intro.css';
 const Intro = () => {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
-    const [particles, setParticles] = useState([]);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const particlesRef = useRef([]);  // Store particles in a ref instead of state
+    const mousePosRef = useRef({ x: 0, y: 0 });  // Store mouse position in a ref
     const [debug, setDebug] = useState({ width: 0, height: 0, mouseX: 0, mouseY: 0 });
-    const [showDebug, setShowDebug] = useState(false); // Set to true to show debug info
+    const [showDebug, setShowDebug] = useState(false);
+    const animationIdRef = useRef(null);
 
     // Initialize canvas and particles
     useEffect(() => {
@@ -43,7 +44,7 @@ const Intro = () => {
                 });
             }
 
-            setParticles(newParticles);
+            particlesRef.current = newParticles;
         };
 
         // Set initial canvas size and particles
@@ -55,6 +56,9 @@ const Intro = () => {
         // Cleanup
         return () => {
             window.removeEventListener('resize', handleResize);
+            if (animationIdRef.current) {
+                cancelAnimationFrame(animationIdRef.current);
+            }
         };
     }, []);
 
@@ -65,12 +69,16 @@ const Intro = () => {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            setMousePos({ x, y });
-            setDebug(prev => ({
-                ...prev,
-                mouseX: x.toFixed(0),
-                mouseY: y.toFixed(0)
-            }));
+            mousePosRef.current = { x, y }; // Update ref instead of state
+
+            // Only update debug info if debugging is enabled (won't affect animation)
+            if (showDebug) {
+                setDebug(prev => ({
+                    ...prev,
+                    mouseX: x.toFixed(0),
+                    mouseY: y.toFixed(0)
+                }));
+            }
         };
 
         document.addEventListener('mousemove', handleMouseMove);
@@ -78,67 +86,60 @@ const Intro = () => {
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
         };
-    }, []);
+    }, [showDebug]);
 
-    // Animation loop
+    // Animation loop - completely rewritten to avoid state updates
     useEffect(() => {
-        if (!canvasRef.current || particles.length === 0) return;
+        if (!canvasRef.current || particlesRef.current.length === 0) return;
 
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-        let animationId;
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const particles = particlesRef.current;
+            const mousePos = mousePosRef.current;
 
-            // Update particles
-            const updatedParticles = particles.map(particle => {
+            // Update and draw particles
+            for (let i = 0; i < particles.length; i++) {
+                const particle = particles[i];
+
                 // Move particle
-                let x = particle.x + particle.speedX;
-                let y = particle.y + particle.speedY;
-                let speedX = particle.speedX;
-                let speedY = particle.speedY;
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
 
                 // Boundary check
-                if (x < 0 || x > canvas.width) speedX *= -1;
-                if (y < 0 || y > canvas.height) speedY *= -1;
+                if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
+                if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
                 // Update position with boundary reflection
-                x = Math.max(0, Math.min(canvas.width, x));
-                y = Math.max(0, Math.min(canvas.height, y));
+                particle.x = Math.max(0, Math.min(canvas.width, particle.x));
+                particle.y = Math.max(0, Math.min(canvas.height, particle.y));
 
                 // Draw particle
                 ctx.beginPath();
-                ctx.arc(x, y, particle.size, 0, Math.PI * 2);
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
                 ctx.fillStyle = particle.color;
                 ctx.fill();
 
                 // Connect to mouse if close enough
-                const mouseDistance = Math.hypot(x - mousePos.x, y - mousePos.y);
+                const mouseDistance = Math.hypot(particle.x - mousePos.x, particle.y - mousePos.y);
                 if (mouseDistance < 120) {
                     ctx.beginPath();
                     ctx.strokeStyle = `rgba(90, 45, 130, ${0.3 * (1 - mouseDistance / 120)})`;
                     ctx.lineWidth = 0.5;
-                    ctx.moveTo(x, y);
+                    ctx.moveTo(particle.x, particle.y);
                     ctx.lineTo(mousePos.x, mousePos.y);
                     ctx.stroke();
                 }
-
-                return {
-                    ...particle,
-                    x,
-                    y,
-                    speedX,
-                    speedY
-                };
-            });
+            }
 
             // Connect nearby particles
-            for (let i = 0; i < updatedParticles.length; i++) {
-                const p1 = updatedParticles[i];
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
 
-                for (let j = i + 1; j < updatedParticles.length; j++) {
-                    const p2 = updatedParticles[j];
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
                     const distance = Math.hypot(p1.x - p2.x, p1.y - p2.y);
 
                     if (distance < 100) {
@@ -152,16 +153,18 @@ const Intro = () => {
                 }
             }
 
-            setParticles(updatedParticles);
-            animationId = requestAnimationFrame(animate);
+            // No setState call here anymore!
+            animationIdRef.current = requestAnimationFrame(animate);
         };
 
         animate();
 
         return () => {
-            cancelAnimationFrame(animationId);
+            if (animationIdRef.current) {
+                cancelAnimationFrame(animationIdRef.current);
+            }
         };
-    }, [particles, mousePos]);
+    }, []); // Empty dependency array - only run once on mount
 
     return (
         <div className="creative-intro-container" ref={containerRef}>
