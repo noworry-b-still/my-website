@@ -20,7 +20,7 @@
 
 .certificate_card {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -62,7 +62,7 @@ flex-direction: column;
   display: inline-block;
   padding: 8px 16px;
   margin-top: 8px;
-  background-color: #6A0DAD;
+  background-color: #5a2d82;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -73,7 +73,7 @@ flex-direction: column;
   display: inline-block;
   padding: 10px 18px;
   margin-top: 8px;
-  background-color: #6A0DAD;
+  background-color: #5a2d82;
   /* Deep Purple */
   color: #fff;
   text-decoration: none;
@@ -87,12 +87,9 @@ flex-direction: column;
 
 .certificate_cta:hover {
   background-color: #4B0082;
-  /* Darker Purple */
-  border: 2px solid #ffffff;
-  /* White Border */
-  animation: smoothScale 0.3s ease-in-out forwards;
+  border: 2px solid #411f5f;
+  /* animation: smoothScale 0.3s ease-in-out forwards; */
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-  /* Soft Glow Effect */
 }
 
 @keyframes smoothScale {
