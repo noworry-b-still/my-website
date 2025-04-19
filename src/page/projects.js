@@ -9,7 +9,7 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Get unique categories from projects
-  const categories = ["All", ...new Set(projectsData.flatMap(project => project.technologies))];
+  const categories = ["All", ...new Set(projectsData.flatMap(project => project.languages))];
 
   // Filter projects based on search and category
   const filteredProjects = projectsData.filter(project => {
